@@ -1,6 +1,6 @@
-First two days of the retreat.
+# Introduction to Python For Data Science
 
-Subject: Python for data science
+First two days of the retreat.
 
 Taught by [Jocopo Farina](https://github.com/jacopofar)
 
