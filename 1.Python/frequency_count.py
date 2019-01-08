@@ -1,4 +1,6 @@
 def most_frequent_chars(s):
+    """ Returns a list of all characters in a string ordered on the frequency of occurence
+    """
     frequencies = dict()
     for char in s:
         if char in frequencies:
@@ -13,8 +15,11 @@ def most_frequent_chars(s):
             frequencies_inverted[freq] = [char]
     freq_list = list(frequencies_inverted.keys())
     freq_list.sort(reverse=True)
-    return 'bla'
+    char_list_ordered = []
+    for freq in freq_list:
+        char_list_ordered += frequencies_inverted[freq]
+    return char_list_ordered
 
 
-s = "blablalknkdùjkjgfgugdhvfhdhfbla"
+s = "aaabbccccccddr"
 print(most_frequent_chars(s))
