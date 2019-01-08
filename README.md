@@ -1,1 +1,1 @@
-This is a folder with the first exercises of the DSR course
+This is a folder with the first exercises of the [DSR](https://datascienceretreat.com/) course
