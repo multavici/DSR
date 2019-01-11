@@ -2,6 +2,6 @@
 
 First two days of the retreat.
 
-Taught by [Jocopo Farina](https://github.com/jacopofar)
+Taught by [Rachel Berryman](https://github.com/rachelkberrymanr)
 
-Slides [here](https://github.com/jacopofar/IntroPythonForDS). 
+Sources [here](https://github.com/rachelkberryman/DSR_Pandas_1). 

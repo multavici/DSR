@@ -1,5 +1,6 @@
 Airbnb/
 .DS_Store
 */.ipynb_checkpoints/*
+*/data/*
 1.Python/jupyter_notebooks/.ipynb_checkpoints/
 1.Python/Airbnb/
