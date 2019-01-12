@@ -1,4 +1,8 @@
 .DS_Store
+.vscode
+
+# Environment files
+env/
 
 # Jupyter Notebook files
 */.ipynb_checkpoints/*
