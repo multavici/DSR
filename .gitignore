@@ -12,5 +12,12 @@ env/
 */*/.ipynb_checkpoints/*
 
 # all data files
+*/data/
+data/
 */data/*
 */*/data/*
+data.*
+
+# draft files
+*/drafts/
+*/drafts/*
