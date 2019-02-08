@@ -1,5 +1,5 @@
 .DS_Store
-.vscode
+.vscode/
 
 # VS Code files
 DSR.code-workspace
@@ -22,3 +22,7 @@ data.*
 # draft files
 */drafts/
 */drafts/*
+
+# cache files
+*/__pycache__/
+*/*/__pycache__/
