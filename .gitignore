@@ -6,6 +6,7 @@ DSR.code-workspace
 
 # Environment files
 env/
+*/adv_env/
 
 # Jupyter Notebook files
 */.ipynb_checkpoints/*
