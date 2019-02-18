@@ -1,0 +1,34 @@
+Epoch 0/1
+0:00:10.776008s training loss 1.00721826579 validation accuracy 0.154607768469 class accuracy 0.134865178651
+Epoch 0/1
+0:00:10.412839s training loss 1.00716548006 validation accuracy 0.161462300076 class accuracy 0.141557645113
+Epoch 0/1
+0:00:11.608615s training loss 1.00720184718 validation accuracy 0.159068654118 class accuracy 0.139225482359
+Epoch 0/10
+0:00:10.926676s training loss 1.00721186637 validation accuracy 0.153193341312 class accuracy 0.133491552277
+Epoch 1/10
+0:00:11.632171s training loss 0.98400243943 validation accuracy 0.234468501795 class accuracy 0.209875904908
+Epoch 2/10
+0:00:11.552340s training loss 0.971255483042 validation accuracy 0.30029376564 class accuracy 0.27771847284
+Epoch 3/10
+0:00:11.483615s training loss 0.960447678867 validation accuracy 0.345773038842 class accuracy 0.350396543785
+Epoch 4/10
+0:00:11.113838s training loss 0.950815762831 validation accuracy 0.407572625394 class accuracy 0.423215626746
+Epoch 5/10
+0:00:11.669668s training loss 0.942021535947 validation accuracy 0.45588075291 class accuracy 0.469063730372
+Epoch 6/10
+0:00:11.421271s training loss 0.93394679083 validation accuracy 0.486889348275 class accuracy 0.501807520283
+Epoch 7/10
+0:00:10.751960s training loss 0.926448808278 validation accuracy 0.525514089871 class accuracy 0.533941677883
+Epoch 8/10
+0:00:11.127472s training loss 0.919547481007 validation accuracy 0.551844195409 class accuracy 0.561946715966
+Epoch 9/10
+0:00:11.096330s training loss 0.913127023845 validation accuracy 0.571102165162 class accuracy 0.576674902623
+Epoch 0/20
+0:00:10.941759s training loss 1.00721151289 validation accuracy 0.159286258296 class accuracy 0.139444373769
+Epoch 1/20
+0:00:11.021417s training loss 0.98403691573 validation accuracy 0.231204439125 class accuracy 0.206821879371
+Epoch 2/20
+0:00:11.083705s training loss 0.971283092038 validation accuracy 0.298988140572 class accuracy 0.274694446953
+Epoch 3/20
+0:00:11.166335s training loss 0.960467355088 validation accuracy 0.351648351648 class accuracy 0.351591272264
