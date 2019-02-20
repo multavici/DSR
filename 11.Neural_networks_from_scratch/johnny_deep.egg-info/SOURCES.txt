@@ -1,0 +1,9 @@
+johnny_deep/__init__.py
+johnny_deep/activations.py
+johnny_deep/models.py
+johnny_deep/utils.py
+johnny_deep.egg-info/PKG-INFO
+johnny_deep.egg-info/SOURCES.txt
+johnny_deep.egg-info/dependency_links.txt
+johnny_deep.egg-info/requires.txt
+johnny_deep.egg-info/top_level.txt

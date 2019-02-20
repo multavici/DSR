@@ -1,0 +1,37 @@
+Metadata-Version: 1.1
+Name: johnny-deep
+Version: 0.0.1
+Summary: A minimal toy framework for (not very) deep learning.
+Home-page: UNKNOWN
+Author: Marco Faedo
+Author-email: marcofaedo@gmail.com
+License: MIT
+Description: # Neural Networks from scratch
+        
+        Course by Macro Faedo from Hypatos
+        
+        # Johnny Deep
+        
+        A minimal framework for (not very) deep learning, created for education purposed only.
+        
+        ## Development install
+        
+        Fork and clone the repo locally, then install it as a package in editable mode:
+        
+        ```sh
+        pip install -e ".[development]"
+        ```
+        
+        ## Authors
+        
+        `johnny_deep` was written by `Marco Faedo <marcofaedo@gmail.com>`.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
