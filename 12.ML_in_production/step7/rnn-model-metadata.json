@@ -1,0 +1,14 @@
+{
+    "models": [
+        {
+            "score_train": 0.8082,
+            "score_test": 0.74136,
+            "train_timestamp": "2019-02-20T17:23:07.414168",
+            "version": 1
+        }
+    ],
+    "properties": {
+        "db-version": "1.2.1.1",
+        "active-model": "1"
+    }
+}

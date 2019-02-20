@@ -8,6 +8,7 @@ DSR.code-workspace
 env/
 */adv_env/
 */rl-env/
+**/venv/
 
 # Jupyter Notebook files
 */.ipynb_checkpoints/*
@@ -21,6 +22,10 @@ data/
 */data/*
 */*/data/*
 data.*
+**/aclImdb/
+**/aclImdb_v1.tar.gz
+**/iris-model.db
+**iris.data
 
 # draft files
 */drafts/
@@ -29,3 +34,11 @@ data.*
 # cache files
 */__pycache__/
 */*/__pycache__/
+
+# worker files
+**/worker*/
+**/*worker*/
+
+# databases
+*.db
+*.gz

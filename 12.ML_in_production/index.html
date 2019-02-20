@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Productive machine learning in Python with Palladium and scikit-learn</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Productive machine learning in Python
+
+Daniel Nouri, Natural Vision UG, datascienceretreat.com 2019
+
+---
+
+# Agenda
+
+We'll talk about:
+
+- A seamless workflow for developing machine learning models and
+  putting them in production
+
+- Solving common problems in machine learning projects, such as
+  modularization of code, hyperparameter optimization, and distributed
+  learning
+
+- Making available trained models through scalable and secure web
+  services
+
+---
+
+# Download slides and code
+
+Download this repository to be able to run code examples:
+
+```bash
+$ git clone https://github.com/naturalvision/dsr-2019.git
+```
+
+Slides are online at:
+
+https://naturalvision.github.io/dsr-2019/
+
+---
+
+# whoami
+
+- Machine Learning Consultant ([Natural Vision](http://naturalvision.de))
+  * Development and training (Python and Machine Learning)
+- Clients: Otto Group, IKEA, Luxottica, Toptal
+- Strengths:
+  * Python (since 2000)
+  * Open Source (since 2003)
+  * Deep Learning (since 2014)
+  * Software development best practices (testing, pairing, tutorials)
+
+---
+
+# Palladium: Overview
+
+Palladium emerged from a Otto Group BI project to predict parcel
+delivery times.
+
+These are the requirements that Palladium fulfills for the *Otto Group
+BI*:
+
+- Smooth transition from prototypes to machine learning models in
+  production
+- Avoid boilerplate in ML projects
+- High scalability
+- Avoid license costs
+
+A presentation of Palladium from PyData 2016 is found [here
+(PDF)](./resources/palladium-pydata-lattner.pdf).
+
+We will start by implementing a classifier with Palladium
+
+---
+
+# Iris dataset
+
+In our first example in `step1`, we will make use of the classic
+"Iris" machine learning dataset from 1936.
+
+`step1/iris.data` contains the data in CSV format.  Note that the
+first line for column names is missing:
+
+```csv
+5.2,3.5,1.5,0.2,Iris-setosa
+4.3,3.0,1.1,0.1,Iris-setosa
+5.6,3.0,4.5,1.5,Iris-versicolor
+6.3,3.3,6.0,2.5,Iris-virginica
+...
+```
+
+The columns are:
+
+- `sepal length`
+- `sepal width`
+- `petal length`
+- `petal width`
+- `species`
+
+---
+
+# Iris as a classification problem
+
+We want to implement a classifier that predicts the species based on
+the four attributes.
+
+![:scale 50%](./resources/iris-scatter.png)
+
+---
+
+# Palladium: Reading the dataset
+
+You'll find a configuration file in `step1/config.py`.  Therein,
+you'll find the definition of two `dataset_loader`s, which are
+responsible for reading the dataset:
+
+```python
+{
+    'dataset_loader_train': {
+        '__factory__': 'palladium.dataset.Table',
+        'path': 'iris.data',
+        'names': [
+            'sepal length',
+            'sepal width',
+            'petal length',
+            'petal width',
+            'species',
+        ],
+        'target_column': 'species',
+        'sep': ',',
+        'nrows': 100,
+    },
+
+    'dataset_loader_test': {
+        '__copy__': 'dataset_loader_train',
+        'nrows': None,
+        'skiprows': 100,
+    },
+}
+```
+
+---
+
+# Palladium: Configuration and code separated
+
+Palladium encourages the separation of configuration and code.
+Machine Learning projects typically have a lot of constants and
+configuration.  Here are some examples:
+
+- Path to the dataset
+
+```python
+        'path': 'iris.data',
+```
+
+- Database configuration
+
+```python
+        'url': 'sqlite:///iris-model.db',
+```
+
+- Hyperparameters of our models
+
+```python
+        'C': 0.1,
+```
+
+Also, we frequently have to deal with differing configuration between
+production and development environments
+
+---
+
+# Palladium: Model definition
+
+```python
+    'model': {
+        '__factory__': 'sklearn.linear_model.LogisticRegression',
+        'C': 0.1,
+    },
+
+    'model_persister': {
+        '__factory__': 'palladium.persistence.Database',
+        'url': 'sqlite:///iris-model.db',
+    },
+```
+
+The model definition uses the configuration key `model`.  As our
+classifier, we'll make use of the implementation of [Logistic
+Regression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
+out of scikit-learn.
+
+The `model_persister` entry defines where we'll save the trained model
+and where to read it back from.  The configuration above configures a
+SQLite database to act as the model storage.
+
+---
+
+# Palladium: Installation
+
+Let's install Palladium.  We'll first create a
+[virtualenv](https://virtualenv.pypa.io), and install dependencies
+therein:
+
+```bash
+$ python3 -m venv .
+$ source bin/activate  # or: `scripts/activate.bat` on Windows
+$ pip install -U pip
+$ pip install -r step1/requirements.txt
+Collecting palladium (from -r step1/requirements.txt (line 1))...
+...
+Successfully installed ...
+```
+
+---
+
+# Palladium: Installation - possible issues
+
+Maybe you're on Windows and you have trouble installing
+[ujson](https://pypi.org/project/ujson/) because you don't have Visual
+Code installed.  Then check out this site which has [binary wheels for
+ujson for Windows](https://www.lfd.uci.edu/~gohlke/pythonlibs/#ujson).
+Here's an example of how you would install ujson from that site (for
+Python 3.6):
+
+```bash
+$ pip install https://download.lfd.uci.edu/pythonlibs/r5uhg2lo/ujson-1.35-cp36-cp36m-win_amd64.whl
+```
+
+If you really want to use [Conda](https://conda.io) instead of vanilla
+Python:
+
+```bash
+$ conda install ujson
+$ pip install -r step1/requirements.txt
+```
+
+> **Note:** For this tutorial, it's not recommended to use Conda.  Use
+it if you know what you're doing, but be aware that some things will
+work differently for you going forward.
+
+---
+
+# Palladium: Training a model
+
+We already have all pieces in place to fit our first model.  To fit,
+we'll use Palladium's `pld-fit` command along with the `--evaluate`
+option.  On Linux:
+
+```bash
+$ cd step1
+$ export PALLADIUM_CONFIG=config.py
+$ pld-fit --evaluate
+INFO:palladium:Loading data...
+...
+INFO:palladium:Train score: 0.9
+...
+INFO:palladium:Test score:  0.82
+...
+INFO:palladium:Wrote model with version 1.
+```
+
+On Windows:
+
+```shell
+$ cd step1
+$ set PALLADIUM_CONFIG=config.py
+$ pld-fit --evaluate
+```
+
+Our classifier reaches an accuracy of 90% on the training set and 82%
+on the test set.
+
+---
+
+# Regularization
+
+So what is this `C` parameter of our model about?
+
+![:scale 80%](./resources/ng-regularized-lr.png)
+
+---
+
+# Regularization (2)
+
+From the [scikit-learn
+docs](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html):
+
+> `C`: Inverse of regularization strength; must be a positive
+float. Like in support vector machines, smaller values specify
+stronger regularization.
+
+## Exercise 1:
+
+Can we find a better C parameter such that our score on the test set
+improves?
+
+---
+
+# Grid Search
+
+The search for optimal hyperparameters is a very common task in
+machine learning.  In our example, doing the search by hand was still
+easy, but more complex models and pipelines often have a big number of
+these parameters.
+
+There's different options to perform the search, scikit-learn itself
+implements a [number of these
+algorithms](http://scikit-learn.org/stable/modules/grid_search.html).
+One of these algorithms is called *Grid Search*.
+
+---
+
+# Grid Search: Application
+
+`step2/config.py` contains the parametrization of our Grid Search:
+
+```python
+    'grid_search': {
+        'param_grid': {
+            'C': [0.1, 1, 10, 100, 1000],
+         },
+        'cv': 8,
+        'verbose': 4,
+        'n_jobs': -1,
+    },
+```
+
+We use Palladium's `pld-grid-search` command to execute the search:
+
+```bash
+$ cd ../step2
+$ pld-grid-search
+```
+
+---
+
+# Grid Search: Interpreting the output
+
+```
+   mean_fit_time  mean_score_time  mean_test_score  mean_train_score param_C
+3       0.000778         0.000188             0.98          0.989990     100
+4       0.000860         0.000221             0.98          1.000000    1000
+2       0.000691         0.000198             0.96          0.972828      10
+1       0.000675         0.000199             0.95          0.955667       1
+0       0.001668         0.000427             0.87          0.872882     0.1
+```
+
+A low value for C means stronger regularization.  The effect here is
+"underfitting", which is characterized by a low train and low test
+score.
+
+![:scale 100%](./resources/sklearn-overfitting-underfitting.png)
+
+---
+
+# Grid Search and cross validation
+
+We set the `cv` parameter in our grid search configuration to 8, which
+means we want to use 8-fold cross validation.  Let's take a look again
+at the output of `pld-grid-search`:
+
+```
+...
+Fitting 8 folds for each of 5 candidates, totalling 40 fits
+...
+        params  split0_test_score  split1_test_score  split2_test_score  \
+3   {'C': 100}           1.000000           1.000000           1.000000
+
+   split3_test_score  split4_test_score  split5_test_score  split6_test_score  \
+3           0.916667           0.916667           1.000000           1.000000
+
+   split7_test_score  mean_test_score  std_test_score  rank_test_score  \
+3           1.000000             0.98        0.035590                1
+...
+```
+
+Using cross validation is very useful if you have a small dataset but
+you still want to get a good idea of how our model's real life
+performance will look like.
+
+---
+
+# Palladium: Web service
+
+Palladium implements a web service, with which we can use our trained
+model via HTTP to make predictions.
+
+First we need to configure the web service.  In our Iris example, this
+is what we need:
+
+```python
+    'predict_service': {
+        '__factory__': 'palladium.server.PredictService',
+        'mapping': [
+            ('sepal length', 'float'),
+            ('sepal width', 'float'),
+            ('petal length', 'float'),
+            ('petal width', 'float'),
+        ],
+    },
+```
+
+You can find this configuration in `step3/config.py`.
+
+---
+
+# Palladium: Running the webservice
+
+```bash
+$ cd ../step3
+$ pld-fit --evaluate
+$ pld-devserver
+```
+
+We can now call the service via HTTP GET.  Follow this link:
+
+http://localhost:5000/predict?sepal%20length=6.3&sepal%20width=2.5&petal%20length=4.9&petal%20width=1.5
+
+This is the result:
+
+```json
+{
+    "metadata": {"error_code":0,"status":"OK"},
+    "result":   "Iris-virginica"
+}
+```
+
+---
+
+# Palladium: Python API
+
+We want to write a script to produce the following output:
+
+```bash
+$ python predict.py 6.3 2.5 4.9 1.5
+Iris-setosa: 0.0%
+Iris-versicolor: 44.9%
+Iris-virginica: 55.1%
+```
+
+Here's the implementation in `step3/predict.py`:
+
+```python
+import sys
+from palladium.config import get_config
+
+def predict(features):
+    # Get hold of the Palladium configuration in config.py:
+    config = get_config()
+    # Use the model_persister to load the trained model:
+    model = config['model_persister'].read()
+    # From here on, it's plain scikit-learn:
+    result = model.predict_proba([features])[0]
+    for class_, proba in zip(model.classes_, result):
+        print("{}: {:.1f}%".format(class_, proba*100))
+
+if __name__ == '__main__':
+    predict([float(v) for v in sys.argv[1:]])
+```
+
+---
+
+# Skorch
+
+[Skorch](https://skorch.readthedocs.io/) is a scikit-learn compatible
+library for neural networks.  It's based on [PyTorch](https://pytorch.org).
+
+## Installation
+
+```bash
+$ pip install -r step4/requirements-base.txt
+```
+
+Look for the way to install PyTorch on your system on
+http://pytorch.org
+
+If you are running Linux and you don't have CUDA, try this:
+
+```bash
+$ pip install -r step4/requirements-cpu.txt
+```
+
+If you're running Linux and you have CUDA installed, then this should
+work:
+
+```bash
+$ pip install -r step4/requirements-gpu.txt
+```
+
+---
+
+# Why PyTorch?
+
+Here's from Stefano J. Attardi's blog post titled [How I Shipped a
+Neural Network on iOS with CoreML, PyTorch, and React
+Native](https://attardi.org/pytorch-and-coreml):
+
+> Like most people, I cut my neural teeth on TensorFlow. But my
+honeymoon period had ended. I was getting weary of the kitchen-sink
+approach to library management, the huge binaries, and the extremely
+slow startup times when training. TensorFlow APIs are a sprawling
+mess. Keras mitigates that problem somewhat, but it’s a leaky
+abstraction. Debugging is hard if you don’t understand how things work
+underneath.
+
+> PyTorch is a breath of fresh air. It’s faster to start up, which
+makes iterating more immediate and fun. It has a smaller API, and a
+simpler execution model. Unlike TensorFlow, it does not make you build
+a computation graph in advance, without any insight or control of how
+it gets executed. It feels much more like regular programming, it
+makes things easier to debug, and also enables more dynamic
+architectures – which I haven’t used yet, but a boy can dream.
+
+---
+
+# Skorch: Iris
+
+We'll continue working with the Iris dataset.  Instead of a logistic
+regression, we'll use a neural network to do the classification.
+
+You'll find the implementation of the neural network and supporting
+code in `step4/model.py`.  The configuration is in `step4/config.py`.
+Let's take a look at the most important parts.
+
+A large part of our configuration looks exactly the same as in the
+last step, namely `dataset_loader_train`, `dataset_loader_test` and
+`model_persister`.
+
+The `model` entry is where things get more interesting:
+
+```python
+    'model': {
+        '__factory__': 'model.create_pipeline',
+    },
+```
+
+Our model is produced by a custom function called `create_pipeline`.
+
+---
+
+# scikit-learn: Pipelines
+
+A `sklearn.pipeline.Pipeline` is a pipeline of transforms with a final
+estimator (classifier or regressor).  Here's the implementation of
+`model.create_pipeline`:
+
+```python
+def create_pipeline(
+    device='cpu',  # or 'cuda'
+    max_epochs=50,
+    lr=0.1,
+    **kwargs
+):
+    return PipelineY([
+        ('cast', Cast(np.float32)),
+        ('scale', StandardScaler()),
+        ('net', NeuralNetClassifier(
+            MyModule,
+            device=device,
+            max_epochs=max_epochs,
+            lr=lr,
+            train_split=None,
+            **kwargs,
+        ))],
+        y_transformer=LabelEncoder(),
+        predict_use_inverse=True,
+        )
+```
+
+---
+
+# scikit-learn: StandardScaler
+
+`StandardScaler` is one of the transforms that scikit-learn itself
+implements.  This transform standardizes features by removing the mean
+and scaling features to unit variance.
+
+From the [scikit-learn
+docs](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html):
+
+> Standardization of a dataset is a common requirement for many
+machine learning estimators: they might behave badly if the individual
+features do not more or less look like standard normally distributed
+data (e.g. Gaussian with 0 mean and unit variance).
+
+> For instance many elements used in the objective function of a
+learning algorithm (such as the RBF kernel of Support Vector Machines
+or the L1 and L2 regularizers of linear models) assume that all
+features are centered around 0 and have variance in the same
+order. **If a feature has a variance that is orders of magnitude
+larger than others, it might dominate the objective function and make
+the estimator unable to learn from other features correctly as
+expected.**
+
+---
+
+# Skorch: NeuralNetClassifier
+
+```python
+from skorch import NeuralNetClassifier
+
+NeuralNetClassifier(
+    MyModule,
+    device='cpu',
+    max_epochs=50,
+    lr=0.1,
+    train_split=None,
+    **kwargs,
+)
+```
+
+Class `NeuralNetClassifier` contains the training logic, as well as
+methods such as `fit` and `predict`, for compatibility with
+scikit-learn.
+
+---
+
+# PyTorch: nn.Module
+
+Our PyTorch `Module` contains the definition of our neural network.
+We instantiate the layers of our network in `__init__`.  In method
+`forward` we accept the data (`X`) and run the data through our
+layers:
+
+```python
+class MyModule(nn.Module):
+    def __init__(self, num_inputs=4, num_units=10, num_outputs=3):
+        super(MyModule, self).__init__()
+
+        self.dense0 = nn.Linear(num_inputs, num_units)
+        self.nonlin = F.relu
+        self.dropout = nn.Dropout(0.5)
+        self.dense1 = nn.Linear(num_units, 10)
+        self.output = nn.Linear(10, num_outputs)
+
+    def forward(self, X, **kwargs):
+        X = self.nonlin(self.dense0(X))
+        X = self.dropout(X)
+        X = F.relu(self.dense1(X))
+        X = F.softmax(self.output(X), dim=-1)
+        return X
+```
+
+---
+
+# Learning rate
+
+One of the most important hyperparameters of neural networks is the
+*learning rate*.  It defines, how large our iterative steps are when
+doing gradient descent.  Gradient descent is the optimization
+algorithm that's used in neural networks and many other machine
+learning algorithms.
+
+![:scale 80%](./resources/ng-learning-rate.png)
+
+---
+
+# Grid Search: Network hyperparameters
+
+In `step4/config.py`:
+
+```python
+    'grid_search': {
+        'param_grid': {
+            'net__lr': [0.03, 0.1, 0.3],
+        },
+        'cv': 5,
+        'verbose': 4,
+        'n_jobs': 1,
+    },
+```
+
+```bash
+$ pld-grid-search
+```
+
+## Exercise 2:
+
+Which learning rate is the best?
+
+---
+
+# Grid Search: Network hyperparameters (2)
+
+## Exercise 3:
+
+In `step4/config.py`, look for the comment *YOUR CODE HERE*.  Try to
+find a good combination of learning epochs (`net__max_epochs`) and
+learning rate (`net__lr`).  Can you find a combination that gets a
+`mean_test_score` of 96% or better?
+
+---
+
+# Skorch: LRScheduler and EarlyStopping
+
+- The
+  [skorch.callbacks.LRScheduler](https://skorch.readthedocs.io/en/latest/callbacks.html#skorch.callbacks.LRScheduler)
+  allows us to adapt the learning rate during training, based on
+  arbitrary conditions.
+
+- The
+  [skorch.callbacks.EarlyStopping](https://skorch.readthedocs.io/en/latest/callbacks.html#skorch.callbacks.EarlyStopping)
+  callback allows the stopping of training if further training leads
+  to no more improvements.
+
+---
+
+# Grid Search: Parallelization with Dask
+
+If we now consider adding more hyperparameters to the search, such as
+the number of neurons in our network's *hidden layer*, we'll
+understand that the search can quickly take a long time.
+
+```python
+    'grid_search': {
+        'param_grid': {  # 3 * 4 * 4 * 5 folds = 240 fits!
+            'net__lr': [0.03, 0.1, 0.3],
+            'net__max_epochs': [50, 100, 200, 400],
+            'net__num_units': [5, 10, 20, 40],
+        },
+```
+
+The search for the best hyperparameters is often the most
+computationally intense part of machine learning projects.  For this
+reason, scikit-learn supports the parallelization of Grid Search using
+a cluster of computers via [Dask](http://dask.pydata.org):
+
+> Dask is a flexible library for parallel computing in Python.
+
+---
+
+# Dask: Application
+
+```bash
+$ pip install dask distributed
+```
+
+Open up a new terminal window and start the Dask scheduler:
+
+```bash
+$ source bin/activate
+$ dask-scheduler
+```
+
+Keep the scheduler running.  Now open another terminal window and
+start a worker.  You may add an arbitrary number of these, on any
+number of computers:
+
+```bash
+$ source bin/activate  # on Windows: scripts/activate.bat
+$ cd step4
+$ export PYTHONPATH=.  # on Windows: set PYTHONPATH=.
+$ dask-worker 127.0.0.1:8786  # IP and port of scheduler
+```
+
+Finally, we start our Grid Search like this (from inside the environment!):
+
+```bash
+$ cd step4
+$ export PALLADIUM_CONFIG=config.py,dask-config.py
+$ # or on Windows: set PALLADIUM_CONFIG=config.py,dask-config.py
+$ pld-grid-search
+```
+
+---
+
+# Determine wine quality with Skorch
+
+Let's try the same neural net on a different dataset.  We'll use the
+[Wine Quality Data Set](https://www.openml.org/d/40691) to learn a
+model to predict the quality of wine based on a score between 0
+(awful) and 10 (fantastic).
+
+`step5` contains a copy of `step4`. First, we will have to implement a
+Palladium `DatasetLoader` to read the dataset.  We will then try to
+use the network from our last example to do the classification.
+
+Note that when you are finished implementing the DatasetLoader, you'll
+see an error trying to fit the neural network.
+
+```bash
+$ pip install -U scikit-learn
+```
+
+---
+
+# A DatasetLoader for OpenML
+
+The configuration in `step5/config.py` was updated to refer to our new
+class `OpenML`, which reads our dataset from
+[OpenML.org](https://www.openml.org):
+
+```python
+    'dataset_loader_train': {
+        '__factory__': 'dataset.OpenML',
+        'name': 'wine-quality-red',
+    },
+```
+
+## Exercise 4
+
+Complete the implementation of the `OpenML` class in
+`step5/dataset.py`.  The source file has important hints for you.
+
+```python
+from sklearn.datasets import fetch_openml
+
+class OpenML:
+    def __init__(self, name):
+        self.name = name
+
+    def __call__(self):
+        # YOUR CODE HERE:
+```
+
+---
+
+# MyModule: Input and output parameters
+
+## Exercise 4 (continued)
+
+The feature matrix of our new dataset has a shape (dimensionality)
+that is different to the shape of our Iris feature matrix.  Also, the
+number of classes is different.
+
+Determine the shape of the new feature matrix by adding print
+statements into your `OpenML` implementation.
+
+Try to find out which parameters to set in `step5/confg.py` so that
+the network can be trained:
+
+```python
+    'model': {
+        '__factory__': 'model.create_pipeline',
+        # YOUR CODE HERE:
+    },
+```
+
+As soon as you are able to train the network (use `pld-fit`), take a
+look at the Grid Search parameters inside the configuration file.  Can
+you find a configuration of hyperparameters with which you can reach
+an accuracy of 55% or more on the `mean_test_score`?
+
+---
+
+# Regression instead of classification
+
+We can pose the prediction of the wine quality score as a regression
+problem.  That is, instead of predicting probabilities for the 10 or
+so classes, we will try to predict a single number: the actual score
+as a continuous value between 0 and 10.
+
+## Exercise 5
+
+- We make a copy of `step5` and call the new directory `step6`
+- Our network needs to have one output instead of ten
+- The `softmax` function is not used in regression: remove it
+- We use the `neg_mean_absolute_error` instead of `accuracy` in `config.py`
+- We make use of `NeuralNetRegressor` instead of `NeuralNetClassifier`
+- We'll replace our `PipelineY` with `sklearn.pipeline.Pipeline`.  The
+  `LabelEncoder` is no longer useful.  (tricky!)
+- Let's hack our `DatasetLoader` to return the target (or `y`) vector
+  as `float32`: `target = dataset.target.astype('float32')`.
+- For regression problems, Skorch expects a target of shape NxM, where
+  each sample can have multiple regression targets: `target =
+  target.reshape(-1, 1)`.
+
+---
+
+# Random Forest instead of neural network
+
+## Exercise 6
+
+- Rewrite the `model` entry in `step6/config.py` to use
+  `sklearn.ensemble.RandomForestRegressor` instead of our
+  `create_pipeline` function.
+
+  *Hint:* You'll need the following lines in your configuration:
+
+  ```python
+      'model': {
+          '__factory__': 'sklearn.ensemble.RandomForestRegressor',
+          # ...
+      },
+  ```
+
+- Read through the most important parameters of class
+  [`RandomForestregressor` in the scikit-learn
+  documentation](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html).
+  Use a few parameters to run a Grid Search.  What's the best
+  `mean_test_score` can you can get?
+
+---
+
+# Skorch: Sentiment analysis with RNNs
+
+Our last example demonstrates the use of RNNs to do sentiment analysis
+on text.  We use the [Large Movie Review
+Dataset](http://ai.stanford.edu/~amaas/data/sentiment/) to train our
+network.
+
+The implementation follows the `rnn_classifier` example within the
+Skorch source tree.  The implementation is already provided for you in
+`step7/config.py` and `step7/model.py`.  Before we dive into how the
+model works, let's train it:
+
+```bash
+$ cd ../step7
+$ pld-fit --evaluate
+```
+
+This may take a while if you're doing this on CPU.
+
+---
+
+# Sentiment analysis as a service
+
+After the training finished, we can fire up our webservice again:
+
+```bash
+$ pld-devserver
+```
+
+And then call it like so:
+
+http://localhost:5000/predict?text=A+fantastic+movie+despite+its+flaws
+
+The response should look similar to this:
+
+```json
+{"result":[0.348106294870377,0.651893734931946],
+ "metadata":{"status":"OK","error_code":0}}
+```
+
+---
+
+# Skorch: Sentiment analysis with RNNs (2)
+
+Let's take a look at the ["Predict sentiment on the IMDB Dataset"
+notebook](https://github.com/dnouri/skorch/blob/master/examples/rnn_classifer/RNN_sentiment_classification.ipynb)
+to understand how the model works.
+
+```bash
+$ pip install jupyter
+$ jupyter notebook
+```
+
+Look for `RNN_sentiment_classification.ipynb`.
+
+---
+
+# Deploying our model to production
+
+We've seen how `pld-devserver` works for running a web service
+locally, but how do we go about making available our model on an
+actual server?
+
+We will now walk through these steps:
+
+- Set up an AWS account (if you don't have one yet)
+- Set up an EC2 micro instance
+- SSH into the instance to install dependencies and run the Palladium
+  web service
+
+---
+
+# Register and sign in to AWS console
+
+Go to the [aws.amazon.com](https://aws.amazon.com/) and click *Sign In
+to the Console*.  If you don't have an account yet, you can register
+by clicking *Create a new AWS account*.  It will ask you to put your
+credit card information and telephone number.  However, the micro
+instance that we use will cost you nothing.  (Just make sure you
+remove it later.  It's free for one year.)
+
+---
+
+# Launch a new EC2 instance
+
+Under the *Services* drop-down, click *EC2*.  If you're not using EC2
+yet, it will say *0 Running Instances*.  Click this link and then
+click the blue *Launch Instance* button to set up a micro instance.
+
+In the first step, choose *Ubuntu Server 18.04 LTS* as the *Amazon
+Machine Image (AMI)*.  In the second step, choose the *t2.micro*
+instance type.  You can then click the blue *Review and Launch*
+button.
+
+Lastly, when you now click *Launch*, it will display a pop-up with
+which you can *Create a new key pair*.  The name doesn't matter, maybe
+choose something like *DSR Key* and click *Download Key Pair*.  This
+will download a file with the ending *.pem*.  Keep this file in a safe
+place; you will need it to log in to your instance.
+
+After launching you should be able to view your instance in the
+overview.
+
+![:scale 100%](./resources/ec2-instances.png)
+
+---
+
+# Open up additional ports to your EC2 instance
+
+In the overview of instances, look at the bottom pane and navigate to
+*Security groups* and click *launch-wizard-1*.  You will now find
+yourself on a screen that lists your security groups.  On the bottom
+third of the screen, you'll see a tab called *Inbound*.  Click *Edit*
+and then *Add Rule*.  From the *Type* dropdown, choose *HTTP*.  Then,
+add another rule and choose *HTTPS*.  You can leave the defaults as is
+and confirm by clicking the blue *Save* button.  We have now opened up
+ports 80 and 443 on our EC2 instance.  This will be useful later on,
+when we access our web service through these ports.
+
+![:scale 80%](./resources/ec2-inbound-rules.png)
+
+---
+
+# SSH into your EC2 instance
+
+Your EC2 instance has a public IPv4 address.  In this example it's
+35.157.232.182:
+
+![:scale 100%](./resources/ec2-instances.png)
+
+You may already have an SSH client installed.  Try:
+
+```bash
+$ ssh -V
+OpenSSH_7.6p1 Ubuntu-4ubuntu0.2, OpenSSL 1.0.2n  7 Dec 2017
+```
+
+If you do, you can now log in to your EC2 instance by issuing this
+command:
+
+```bash
+$ ssh -i path/to/DSRKey.pem ubuntu@35.157.232.182
+```
+
+Once you have successfully logged in, you should see a prompt like
+this one:
+
+```bash
+ubuntu@ip-172-31-42-9:~$
+```
+
+---
+
+# SSH into your EC2 instance: possible issues
+
+If you're on Ubuntu and you don't have `ssh` installed, you can
+install it like so:
+
+```bash
+$ sudo apt install openssh-client
+```
+
+If you encounter an error saying: *It is required that your private
+key files are NOT accessible by others*, then run this command (once)
+before you run `ssh`:
+
+```bash
+$ chmod 600 path/to/DSRKey.pem
+$ ssh -i path/to/DSRKey.pem ubuntu@35.157.232.182
+```
+
+On newer versions of Windows, the OpenSSH client should be installed
+by default in `C:\Windows\System32\OpenSSH`.  If it's not installed,
+try navigating to *Settings App > Apps > Settings & Apps > Manage
+Optional Features > Add Feature* and select the *OpenSSH Client*.
+
+Once you have successfully logged in, you should see a prompt like
+this one:
+
+```bash
+ubuntu@ip-172-31-42-9:~$
+```
+
+---
+
+# Install dependencies on our EC2 instance
+
+First, let's install a couple of dependencies that we'll need:
+
+```bash
+$ sudo apt update && sudo apt upgrade
+$ sudo apt install python3-venv python3-dev build-essential
+```
+
+Next, we'll check out this repo from Github and create a virtualenv
+inside of it:
+
+```bash
+$ git clone https://github.com/naturalvision/dsr-2019.git
+...
+$ python3 -m venv dsr-2019
+$ cd dsr-2019
+$ source bin/activate
+```
+
+The last command will change our prompt to look something like this:
+
+```
+(dsr-2019) ubuntu@ip-172-31-42-9:~/dsr-2019$
+```
+
+We can now proceed to install Python dependencies:
+
+
+```bash
+$ pip install -U pip
+$ pip install -r step1/requirements.txt
+...
+Successfully installed ...
+```
+
+---
+
+# Use Gunicorn to serve the web service
+
+We've previously used `pld-devserver` to run requests against
+Palladium's built-in web service.  `pld-devserver` uses Flask's
+built-in web server that's suitable for development, but not for
+production environments.  Instead, we'll now install and use
+[Gunicorn](https://gunicorn.org/) to serve the web service:
+
+```bash
+$ pip install gunicorn
+$ cd step3
+$ export PALLADIUM_CONFIG=config.py
+$ pld-fit
+$ gunicorn palladium.wsgi:app -b 0.0.0.0:8080
+```
+
+Try to navigate your browser to this URL, and you'll notice that it's
+not yet working as expected.  There's no response:
+http://35.157.232.182/predict?sepal%20length=6.3&sepal%20width=2.5&petal%20length=4.9&petal%20width=1.5
+
+The problem is that we've asked Gunicorn to serve on port 8080, but
+the standard HTTP port which our browser connects to is port 80.  The
+issue is that only the `root` user can bind to port 80, and we don't
+want to run our application as root.  What can we do?  We can use
+[iptables](https://www.netfilter.org/):
+
+```bash
+$ sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8080
+```
+
+---
+
+# But is it fast? Use `ab` to find out!
+
+A classic tool for benchmarking websites is `ab`, the Apache HTTP
+server benchmarking tool.  Let's install and run a thousand requests
+against our web service, with 10 requests at a time:
+
+```bash
+$ sudo apt install apache2-utils
+$ ab -n 1000 -c 10 "http://localhost:8080/predict?sepal%20length=6.3&sepal%20width=2.5&petal%20length=4.9&petal%20width=1.5"
+```
+
+In the output, look for something like this:
+
+```
+Requests per second:    250.49 [#/sec] (mean)
+```
+
+We can serve 250 requests per second.  That's not bad at all.  But
+let's have a closer look at where time is being spent.
+
+---
+
+# Profiling our web app
+
+To see where time is being spent on each request, let's install the
+[py-spy Python profiler](https://github.com/benfred/py-spy):
+
+```bash
+$ pip install py-spy  # do this from within your virtualenv!
+```
+
+We keep the Gunicorn process running in another window.  Note that
+Gunicorn prints out the process id (PID) of its worker when it starts
+up.  It looks something like this:
+
+```
+[2019-02-18 16:12:05 +0000] [5883] [INFO] Booting worker with pid: 5883
+```
+
+We can now use `py-spy` to attach to the Gunicorn worker and see what
+it's doing:
+
+```bash
+$ sudo su
+$ source bin/activate
+$ py-spy --pid 5883  # replace with the actual Gunicorn PID you just saw
+```
+
+---
+
+# Profiling our web app (2)
+
+You should see output similar to `top`.  The web server isn't doing
+much right now, but we can send another round of requests to it to see
+what it's doing when it's busy.  In a new terminal window, run another
+10000 requests using `ab` and switch back to the `py-spy` window to
+see what's happening.
+
+```bash
+$ ab -n 10000 -c 10 "http://localhost:8080/predict?sepal%20length=6.3&sepal%20width=2.5&petal%20length=4.9&petal%20width=1.5"
+```
+
+![:scale 100%](./resources/py-spy.png)
+
+How come we're spending most of our time executing SQL statements?
+What's the `read` function in `palladium.persistence` at line 421
+doing?  Find out!
+
+---
+
+# Profiling our web app (3)
+
+The culprit is the Palladium `model_persister`, which is set up to
+read the persisted model from disk on every request!  This is not
+useful at all.  Thankfully, there's a wrapper called
+`CachedUpdatePersister` that fixes this issue, as it keeps the model
+in memory.  Replace the `model_perister` entry in the
+`step3/config.py` configuration file with the following:
+
+```python
+    'model_persister': {
+        '__factory__': 'palladium.persistence.CachedUpdatePersister',
+        'impl': {
+            '__factory__': 'palladium.persistence.Database',
+            'url': 'sqlite:///iris-model.db',
+        },
+    },
+```
+
+Now run the `ab` test again.  How many requests per second do you get?
+
+---
+
+# What we did so far with our EC2 instance:
+
+- Set up the EC2 instance using the AWS console
+
+- Opened up additional network ports
+
+- Logged in using SSH and cloned this repo from Github
+
+- Installed system dependencies (`apt install`) and Python project
+  dependencies (`pip install`) on our EC2 instance
+
+- Used Gunicorn to serve the Palladium web service
+
+- Benchmarked (`ab`) and profiled (`py-spy`) our web service
+
+---
+
+# What we'll need to do next:
+
+- We're running the `gunicorn` process in our terminal in foreground.
+  If we close the terminal window, Gunicorn will stop working.  To fix
+  this issue, we'll use [Supervisor](http://supervisord.org/) to start
+  up the Gunicorn process and keep it running.
+
+- Anyone who knows our web service's address can now use it.  What's
+  worse, we're sending the data to predict for and the results over
+  the wire, without encryption.  We'll use HTTPS instead of HTTP, and
+  use [basic access
+  authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+  to prevent eavesdropping and unauthorized use.
+
+---
+
+# Configure Supervisor to keep Gunicorn running
+
+Use `Ctrl+C` to shut down the `gunicorn` process (or alternatively,
+close the terminal window in which you're running it).
+
+On the server, create this supervisor config file and save it as
+`/home/ubuntu/dsr-2019/supervisor.conf`:
+
+```ini
+[program:webservice]
+command=/home/ubuntu/dsr-2019/bin/gunicorn palladium.wsgi:app -b 0.0.0.0:8080
+directory=/home/ubuntu/dsr-2019/step3/
+user=ubuntu
+environment=PALLADIUM_CONFIG="config.py"
+```
+
+You can find out more about [Supervisor's configuration files in the
+documentation](http://supervisord.org/configuration.html).
+
+---
+
+# Install and run Supervisor
+
+We install Supervisor with `apt install`:
+
+```bash
+$ sudo apt install supervisor
+```
+
+And we link the configuration file that we just wrote into a directory
+where Supervisor will pick it up:
+
+```bash
+$ sudo ln -s ~/dsr-2019/supervisor.conf /etc/supervisor/conf.d/
+```
+
+Now let's restart Supervisor and check if it's running our process:
+
+```bash
+$ sudo /etc/init.d/supervisor restart
+$ sudo supervisorctl status
+webservice                       RUNNING   pid 6630, uptime 0:00:22
+```
+
+At this point, we can log out from the server and the web service will
+keep running!  What's more, Supervisor will start up our web service
+when the EC2 box is ever restarted, and it will restart our web
+service should it ever crash with a Python exception or the like.
+
+---
+
+# Set up secure communication to our web service (HTTPS)
+
+Here's what we'll do to secure our web service with TLS/HTTPS:
+
+- Use [certbot](https://certbot.eff.org/)/[Let's
+  Encrypt](https://letsencrypt.org/) to obtain an HTTPS certificate
+
+- Use the [NGINX web server](https://www.nginx.com/) to handle
+  encryption and forward to Gunicorn
+
+- Use [Docker](https://www.docker.com/) and
+  [docker-compose](https://docs.docker.com/compose/) to wire it all
+  together
+
+---
+
+# Install Docker and docker-compose
+
+Installing Docker involves adding Docker's proprietary package
+repository to our Ubuntu 18.04 system and installing the `docker-ce`
+package from there.  Here's the steps:
+
+```bash
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+$ sudo apt update
+$ sudo apt install docker-ce
+```
+
+To install `docker-compose`, make sure you're inside your virtual
+environment and run this:
+
+```bash
+$ pip install docker-compose
+```
+
+---
+
+# Setting up a domain
+
+Before we can ask *Let's Encrypt* for an SSL/TLS certificate, we'll
+have to set up a domain for our EC2 instance.  If you have your own
+domain, chances are that you can easily set up a subdomain that points
+to the EC2 instance.  Here's a [guide on how to set up a subdomain
+with
+Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/).
+
+Here's the *A Record* that I set up such that
+`dsr2019test.naturalvision.de` now points to the IP of my EC2
+instance, which is `35.157.232.182`:
+
+![:scale 100%](./resources/dns-namecheap.png)
+
+After this, we should be able to access our web service using the new
+name: http://dsr2019test.naturalvision.de/alive
+
+---
+
+# Prepare config files before we obtain the certificate
+
+Open up `step8/init-letsencrypt.sh`.  At the top of the file, you'll
+find the definition of domains.  Change this to match the subdomain
+that you just set up:
+
+```bash
+#domains=(mysubdomain.deeplearningretreat.com)
+domains=(dsr2019test.naturalvision.de)
+```
+
+Similarly, replace all occurrences of
+`mysubdomain.deeplearningretreat.com` with your domain name inside of
+`step8/data/nginx/app.conf`.
+
+Remember the `iptables` rule that we used to forward ports?  We need
+to get rid of it, because we'll have NGINX serve port 80:
+
+```bash
+$ sudo iptables -L -t nat
+...
+$ sudo iptables -D PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8080
+$ sudo iptables -L -t nat
+...
+```
+
+---
+
+# Obtain the certificate from *Let's Encrypt*
+
+Now we're ready to run the `init-letsencrypt.sh` script.  You have to
+do this as the root user and while inside the virtual environment:
+
+```bash
+$ sudo su  # become superuser
+$ source bin/activate  # activate virtualenv
+$ cd step8
+$ ./init-letsencrypt.sh
+```
+
+(Make sure you log out as root whenever you no longer need it.)
+
+If successful, this will print something like this:
+
+```
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/dsr2019test.naturalvision.de/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/dsr2019test.naturalvision.de/privkey.pem
+   Your cert will expire on 2019-05-20. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot
+   again. To non-interactively renew *all* of your certificates, run
+   "certbot renew"
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+```
+
+---
+
+# It just works, but how?
+
+Open up this page in your browser.  Your browser will confirm that
+your connection is now secure:
+https://dsr2019test.naturalvision.de/predict?sepal%20length=6.3&sepal%20width=2.5&petal%20length=4.9&petal%20width=1.5
+
+Let's have a look at the individual components and pieces of
+configuration that made this work.
+
+`docker-compose` is a tool that's maybe similar to Supervisor, but
+instead of managing processes on your host, it manages Docker
+containers.  Run `sudo docker-compose ps` from within `step8` to see
+what containers it's running.
+
+`step8/docker-compose.yml` is set up to run an `nginx` container and a
+`certbot` container.  Note how NGINX is set up to handle requests to
+ports 80 and 443.  The NGINX configuration itself lives in
+`step8/data/nginx/app.conf`, and it sets up NGINX to act as a proxy
+for our application (`app_server`).
+
+`init-letsencrypt.sh` is a shell script that uses the `certbot`
+container to obtain the certificate and save it.
+
+---
+
+# An update to our Supervisor configuration
+
+Take a look at `step8/supervisor.conf`.  In addition to our
+`program:webservice` section, we now also have
+`program:docker-compose`:
+
+```ini
+[program:docker-compose]
+command=/home/ubuntu/dsr-2019/bin/docker-compose up
+directory=/home/ubuntu/dsr-2019/step8/
+```
+
+Let's link this file into the right place such that Supervisor picks
+it up:
+
+```bash
+$ sudo rm /etc/supervisor/conf.d/supervisor.conf
+$ sudo ln -s ~/dsr-2019/step8/supervisor.conf /etc/supervisor/conf.d/
+```
+
+We shut down the running instance of Supervisor and `docker-compose`
+before we start up Supervisor again (as root and inside the active
+virtual environment):
+
+```bash
+$ /etc/init.d/supervisor stop
+$ docker-compose down
+$ /etc/init.d/supervisor start
+```
+
+---
+
+# Require authentication for our web service
+
+Now that our connection is secure from eavesdropping, how can we
+restrict access such that only people with a valid username and
+password can use it?
+
+Palladium allows us to add decorators to the existing web hooks.  One
+thing we can do with these decorators is to require authentication.
+Flask's website has [a snippet that implements HTTP Basic Auth as a
+decorator](http://flask.pocoo.org/snippets/8/).  You can find this
+snippet in `step8/mybasicauth.py`.
+
+What's left is to hook up this decorator with our Palladium web
+service.  Add this piece of configuration to
+`step8/palladium-config.py`:
+
+```python
+    'predict_decorators': [
+        'mybasicauth.requires_auth',
+    ],
+
+    'alive_decorators': [
+        'mybasicauth.requires_auth',
+    ],
+```
+
+---
+
+# End
+
+- https://github.com/ottogroup/palladium
+- https://github.com/scikit-learn/scikit-learn
+- https://github.com/dnouri/skorch
+
+
+- daniel@naturalvision.de
+- [twitter.com/dnouri](https://twitter.com/dnouri)
+- [danielnouri.org](http://danielnouri.org)
+- [naturalvision.de](http://naturalvision.de)
+- [linkedin.com/in/nouri](https://www.linkedin.com/in/nouri)
+
+## Images
+
+- [scikit-learn](http://scikit-learn.org)
+- [Machine Learning
+  course](https://www.coursera.org/learn/machine-learning) on Coursera
+
+    </textarea>
+    <script src="resources/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      remark.macros.scale = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+      };
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

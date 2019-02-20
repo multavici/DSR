@@ -210,7 +210,7 @@ class Model():
             cost = 0
             Y_hats = np.ndarray()
             for i in range(0, len(Y), mini_batch_size):
-                mini_batch_X = X[:,i : (i + mini_batch_size) ]
+                mini_batch_X = X[:,i : (i + mini_batch_size)]
                 mini_batch_Y = Y[i : (i + mini_batch_size)]
                 
                 Y_hat = self.forward(mini_batch_X)
