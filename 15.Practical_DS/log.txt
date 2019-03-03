@@ -1,0 +1,502 @@
+{"request": {"basket": [1], "zipCode": 9108, "totalAmount": 39.0}, "response": 0.016156062062966582}
+{"request": {"basket": [1], "zipCode": null, "totalAmount": 36.0}, "response": 0.01459718419781854}
+{"request": {"basket": [2, 2, 2, 3, 0], "zipCode": null, "totalAmount": 50.0}, "response": 0.0020203602687577224}
+{"request": {"basket": [4, 3, 0, 2], "zipCode": 8149, "totalAmount": 368.0}, "response": 0.06489855629147842}
+{"request": {"basket": [0, 4, 1, 0, 0], "zipCode": 3529, "totalAmount": 105.0}, "response": 0.0037455180619688573}
+{"request": {"basket": [1, 2], "zipCode": 7397, "totalAmount": 136.0}, "response": 0.010991510445431844}
+{"request": {"basket": [3, 0], "zipCode": 6406, "totalAmount": 146.0}, "response": 0.03104105433419937}
+{"request": {"basket": [1, 1, 4, 0, 2], "zipCode": 9036, "totalAmount": 435.0}, "response": 0.0133891980043764}
+{"request": {"basket": null, "zipCode": 6420, "totalAmount": 693.0}, "response": 0.32858356936116173}
+{"request": {"basket": [1, 1, 3, 0, 4, 2], "zipCode": 2995, "totalAmount": null}, "response": 0.00845583865917325}
+{"request": {"basket": [0, 2, 2], "zipCode": 1745, "totalAmount": 96.0}, "response": 0.004414147651975418}
+{"request": {"basket": null, "zipCode": 8236, "totalAmount": 960.0}, "response": 0.6715797305117096}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 252.0}, "response": 0.07335194780124688}
+{"request": {"basket": [3, 2, 3, 1, 2], "zipCode": 6190, "totalAmount": 290.0}, "response": 0.015426450492416425}
+{"request": {"basket": [0, 4, 1, 1, 2, 0, 1], "zipCode": null, "totalAmount": 294.0}, "response": 0.001445274779441226}
+{"request": {"basket": [2, 0], "zipCode": 3272, "totalAmount": 114.0}, "response": 0.009650734033847901}
+{"request": {"basket": [4, 1, 3, 3, 0, 1], "zipCode": 4670, "totalAmount": 408.0}, "response": 0.03957688787675109}
+{"request": {"basket": null, "zipCode": 2391, "totalAmount": 476.0}, "response": 0.1452644443340202}
+{"request": {"basket": [0, 4, 2, 4, 1, 2, 1, 4, 2, 0, 4, 4], "zipCode": 4048, "totalAmount": 972.0}, "response": 0.1528529008243637}
+{"request": {"basket": [2], "zipCode": null, "totalAmount": null}, "response": 0.03362934565612618}
+{"request": {"basket": [2, 3, 4, 4, 4, 0], "zipCode": 8303, "totalAmount": 510.0}, "response": 0.3335922822746584}
+{"request": {"basket": [3, 1, 2, 0, 4, 3, 1, 1, 0], "zipCode": null, "totalAmount": 234.0}, "response": 0.001928413266455338}
+{"request": {"basket": [4], "zipCode": 1433, "totalAmount": null}, "response": 0.14216370167080286}
+{"request": {"basket": null, "zipCode": 6079, "totalAmount": 147.0}, "response": 0.04999312041318012}
+{"request": {"basket": [2, 2], "zipCode": 8630, "totalAmount": null}, "response": 0.016856554358416716}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 270.0}, "response": 0.07833224569059369}
+{"request": {"basket": [0, 4, 4, 3, 1, 0], "zipCode": 9498, "totalAmount": 84.0}, "response": 0.01988474018786433}
+{"request": {"basket": [4, 0, 1, 1], "zipCode": 8021, "totalAmount": 268.0}, "response": 0.01563798670314915}
+{"request": {"basket": [0, 4, 4, 0, 4, 0], "zipCode": 5917, "totalAmount": 522.0}, "response": 0.1493907151286859}
+{"request": {"basket": [1, 0, 3], "zipCode": 7568, "totalAmount": 186.0}, "response": 0.015656964867222876}
+{"request": {"basket": [3], "zipCode": 9693, "totalAmount": null}, "response": 0.09466236206180165}
+{"request": {"basket": null, "zipCode": 4750, "totalAmount": 231.0}, "response": 0.06895424359676776}
+{"request": {"basket": [1], "zipCode": null, "totalAmount": 72.0}, "response": 0.016789603975134192}
+{"request": {"basket": [3, 4], "zipCode": 3496, "totalAmount": 26.0}, "response": 0.08477925526010852}
+{"request": {"basket": [3], "zipCode": null, "totalAmount": 25.0}, "response": 0.040318645298879796}
+{"request": {"basket": [0, 0, 1, 0, 4, 3, 4, 2, 0], "zipCode": null, "totalAmount": 216.0}, "response": 0.002837129971650626}
+{"request": {"basket": [0, 3, 2, 2, 1, 4, 4], "zipCode": 7531, "totalAmount": null}, "response": 0.01752101931061247}
+{"request": {"basket": [2, 1, 1], "zipCode": 9437, "totalAmount": 219.0}, "response": 0.005670100896921671}
+{"request": {"basket": [4], "zipCode": 7393, "totalAmount": null}, "response": 0.1138724973222896}
+{"request": {"basket": [3, 4, 1, 2], "zipCode": 7822, "totalAmount": 356.0}, "response": 0.060453222840382306}
+{"request": {"basket": [4, 3, 0, 2, 2], "zipCode": 3888, "totalAmount": null}, "response": 0.01999261756122582}
+{"request": {"basket": [0], "zipCode": null, "totalAmount": null}, "response": 0.032462981443607604}
+{"request": {"basket": [2, 4, 0, 2, 2], "zipCode": 2502, "totalAmount": 205.0}, "response": 0.005570258406921804}
+{"request": {"basket": [2, 3, 1, 0, 4, 2], "zipCode": 8986, "totalAmount": 258.0}, "response": 0.009533659503412189}
+{"request": {"basket": [4], "zipCode": null, "totalAmount": 32.0}, "response": 0.06241289931809543}
+{"request": {"basket": [3, 4, 2], "zipCode": 2386, "totalAmount": null}, "response": 0.08352683735410715}
+{"request": {"basket": [1, 2], "zipCode": 2373, "totalAmount": 154.0}, "response": 0.011786787057826287}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 42.0}, "response": 0.033389203002350834}
+{"request": {"basket": null, "zipCode": 7200, "totalAmount": 252.0}, "response": 0.07668696259615163}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 288.0}, "response": 0.08362017175587617}
+{"request": {"basket": [0, 0, 0, 0], "zipCode": 2693, "totalAmount": 144.0}, "response": 0.002210755781928806}
+{"request": {"basket": [4], "zipCode": 1936, "totalAmount": null}, "response": 0.1417207141408798}
+{"request": {"basket": [1, 4], "zipCode": 1710, "totalAmount": 102.0}, "response": 0.03866478839148823}
+{"request": {"basket": [2, 4, 2, 3, 1, 1], "zipCode": 7449, "totalAmount": null}, "response": 0.01913798254618713}
+{"request": {"basket": [3, 0, 0, 0, 4, 1, 2, 2], "zipCode": null, "totalAmount": null}, "response": 0.0016145326571947417}
+{"request": {"basket": [1, 4, 4, 4, 0, 1], "zipCode": 6451, "totalAmount": 360.0}, "response": 0.09347722428728596}
+{"request": {"basket": null, "zipCode": 7110, "totalAmount": 276.0}, "response": 0.0855133822441199}
+{"request": {"basket": [4, 3, 0, 3, 2, 0], "zipCode": 8414, "totalAmount": 456.0}, "response": 0.05407251552731254}
+{"request": {"basket": [2, 2], "zipCode": 5107, "totalAmount": 48.0}, "response": 0.006988245856521707}
+{"request": {"basket": [3, 0, 2, 3], "zipCode": 4462, "totalAmount": 136.0}, "response": 0.01576350942721322}
+{"request": {"basket": [2, 1, 0, 4, 3, 2, 4], "zipCode": 5381, "totalAmount": 105.0}, "response": 0.010003074931072406}
+{"request": {"basket": null, "zipCode": 5859, "totalAmount": 328.0}, "response": 0.09409288674565319}
+{"request": {"basket": [2, 3, 3], "zipCode": 6681, "totalAmount": 69.0}, "response": 0.030632349189643242}
+{"request": {"basket": [3, 4, 3, 2, 3, 1], "zipCode": 6986, "totalAmount": 528.0}, "response": 0.18520830851586811}
+{"request": {"basket": [1, 4, 3, 3, 3, 2, 4, 1, 2, 3, 0], "zipCode": 3454, "totalAmount": 1067.0}, "response": 0.3127137672504132}
+{"request": {"basket": [4, 0, 1, 4, 3, 1], "zipCode": 9849, "totalAmount": 396.0}, "response": 0.06182602672415133}
+{"request": {"basket": [3, 2, 4, 3, 2, 3, 4, 3, 2, 0, 0], "zipCode": 9732, "totalAmount": 110.0}, "response": 0.010723147089989862}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 162.0}, "response": 0.05256532526508737}
+{"request": {"basket": [4, 1, 1, 1, 1], "zipCode": 4799, "totalAmount": 245.0}, "response": 0.0062450414161264655}
+{"request": {"basket": [1], "zipCode": 9754, "totalAmount": 10.0}, "response": 0.014426922122567963}
+{"request": {"basket": [0, 2, 4, 1, 3, 2, 3, 1, 0, 2], "zipCode": null, "totalAmount": 450.0}, "response": 0.0021922035352742644}
+{"request": {"basket": [4, 2, 3, 3, 2, 0, 0], "zipCode": 4451, "totalAmount": 574.0}, "response": 0.04164678618020472}
+{"request": {"basket": [2, 4, 4, 2, 3, 0], "zipCode": 7559, "totalAmount": 378.0}, "response": 0.06316522209363949}
+{"request": {"basket": [0, 2, 0, 0, 0, 1, 1, 0], "zipCode": 5767, "totalAmount": 224.0}, "response": 0.00011997859377156143}
+{"request": {"basket": [4, 1], "zipCode": 8158, "totalAmount": 136.0}, "response": 0.046073704362553466}
+{"request": {"basket": [3, 2], "zipCode": 9375, "totalAmount": 164.0}, "response": 0.03545677739058884}
+{"request": {"basket": [3, 2, 4, 4], "zipCode": 1305, "totalAmount": null}, "response": 0.16616074584371346}
+{"request": {"basket": [4, 2, 4], "zipCode": null, "totalAmount": 30.0}, "response": 0.05756008782369636}
+{"request": {"basket": null, "zipCode": 9320, "totalAmount": 50.0}, "response": 0.03699226792639347}
+{"request": {"basket": [2, 3], "zipCode": 6396, "totalAmount": 184.0}, "response": 0.03594897080029957}
+{"request": {"basket": [1, 1, 1, 3, 3, 1], "zipCode": 6109, "totalAmount": 576.0}, "response": 0.019236682583423217}
+{"request": {"basket": [3, 2, 2, 1], "zipCode": 9993, "totalAmount": 104.0}, "response": 0.0035917764826105254}
+{"request": {"basket": [2, 1, 2], "zipCode": null, "totalAmount": 186.0}, "response": 0.005667422160626645}
+{"request": {"basket": null, "zipCode": 4716, "totalAmount": null}, "response": 0.07635401654959365}
+{"request": {"basket": [4], "zipCode": 4053, "totalAmount": 72.0}, "response": 0.07277635044089568}
+{"request": {"basket": null, "zipCode": 9902, "totalAmount": 156.0}, "response": 0.055171093380380835}
+{"request": {"basket": [3, 1, 3, 2, 4, 2, 1, 3], "zipCode": 7857, "totalAmount": 168.0}, "response": 0.010537647066394467}
+{"request": {"basket": [0, 4, 0], "zipCode": 6631, "totalAmount": 138.0}, "response": 0.019917312105927114}
+{"request": {"basket": [4, 1, 4, 1], "zipCode": 9531, "totalAmount": 316.0}, "response": 0.07965795186605061}
+{"request": {"basket": null, "zipCode": 2284, "totalAmount": 462.0}, "response": 0.14945601561712232}
+{"request": {"basket": [3, 4, 1, 1], "zipCode": 4580, "totalAmount": null}, "response": 0.03904490340517235}
+{"request": {"basket": [2, 0], "zipCode": null, "totalAmount": null}, "response": 0.015241494815930005}
+{"request": {"basket": [3], "zipCode": 6964, "totalAmount": 50.0}, "response": 0.04833378383397018}
+{"request": {"basket": [1, 3, 4, 0, 2], "zipCode": 9022, "totalAmount": 145.0}, "response": 0.013175884653883257}
+{"request": {"basket": null, "zipCode": 9717, "totalAmount": 60.0}, "response": 0.039034432037962495}
+{"request": {"basket": [3, 2, 2, 3], "zipCode": 7303, "totalAmount": 132.0}, "response": 0.019071243681888325}
+{"request": {"basket": [4, 2, 1], "zipCode": 6075, "totalAmount": 189.0}, "response": 0.026503377922961608}
+{"request": {"basket": null, "zipCode": 7006, "totalAmount": 330.0}, "response": 0.10556967865956929}
+{"request": {"basket": [3, 3, 2, 4], "zipCode": 2020, "totalAmount": 168.0}, "response": 0.08312838176844056}
+{"request": {"basket": null, "zipCode": 5062, "totalAmount": 172.0}, "response": 0.0594832799460029}
+{"request": {"basket": [4, 0, 1, 0, 4], "zipCode": 4538, "totalAmount": null}, "response": 0.02651289743795653}
+{"request": {"basket": [1, 3, 2, 2, 2], "zipCode": null, "totalAmount": 230.0}, "response": 0.004052328905804699}
+{"request": {"basket": [1], "zipCode": 8560, "totalAmount": 72.0}, "response": 0.016217539776293383}
+{"request": {"basket": [4, 1, 1, 2], "zipCode": null, "totalAmount": 100.0}, "response": 0.007685777889306664}
+{"request": {"basket": [2, 0, 4, 0], "zipCode": 2504, "totalAmount": 152.0}, "response": 0.008973452367799863}
+{"request": {"basket": null, "zipCode": 4458, "totalAmount": 76.0}, "response": 0.039695129972492166}
+{"request": {"basket": null, "zipCode": 8481, "totalAmount": 585.0}, "response": 0.24378202325730025}
+{"request": {"basket": [0, 0], "zipCode": null, "totalAmount": 70.0}, "response": 0.007573870370075286}
+{"request": {"basket": [1, 4, 3, 4, 4, 1], "zipCode": 2638, "totalAmount": 564.0}, "response": 0.3753650239318666}
+{"request": {"basket": [4, 4, 1, 1, 1, 3], "zipCode": 1862, "totalAmount": 546.0}, "response": 0.09162727743836245}
+{"request": {"basket": [1, 4, 3, 0], "zipCode": 8386, "totalAmount": 40.0}, "response": 0.018739177747708304}
+{"request": {"basket": [4, 4, 0, 1, 4], "zipCode": 1729, "totalAmount": 50.0}, "response": 0.05791341863020051}
+{"request": {"basket": [0, 3, 2, 3, 3], "zipCode": 1232, "totalAmount": 315.0}, "response": 0.04782151071866056}
+{"request": {"basket": [1, 1], "zipCode": 6207, "totalAmount": null}, "response": 0.015434855894695825}
+{"request": {"basket": [2], "zipCode": 7509, "totalAmount": 42.0}, "response": 0.016914703345880716}
+{"request": {"basket": [2, 0], "zipCode": 2731, "totalAmount": 170.0}, "response": 0.012695629453494148}
+{"request": {"basket": [4], "zipCode": 4807, "totalAmount": 41.0}, "response": 0.0683506609308297}
+{"request": {"basket": [2, 3, 2, 0, 3, 3, 1], "zipCode": 6733, "totalAmount": 518.0}, "response": 0.01928391780515256}
+{"request": {"basket": null, "zipCode": 7853, "totalAmount": 357.0}, "response": 0.23574508475092504}
+{"request": {"basket": [4, 1, 1, 1, 1, 2], "zipCode": 6203, "totalAmount": 96.0}, "response": 0.0015101276322597073}
+{"request": {"basket": null, "zipCode": 5502, "totalAmount": 105.0}, "response": 0.04134398742489955}
+{"request": {"basket": [0, 1, 1, 1], "zipCode": 7482, "totalAmount": 40.0}, "response": 0.001412236076910397}
+{"request": {"basket": [2, 0, 2, 3, 2, 2, 1], "zipCode": 2978, "totalAmount": 189.0}, "response": 0.0007683053697479598}
+{"request": {"basket": [2, 4], "zipCode": 3795, "totalAmount": 38.0}, "response": 0.03276805219223694}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 70.0}, "response": 0.03714779413525541}
+{"request": {"basket": [1, 4], "zipCode": 8629, "totalAmount": 20.0}, "response": 0.027210143491255133}
+{"request": {"basket": [2, 0, 3, 4, 0, 0], "zipCode": 8832, "totalAmount": 504.0}, "response": 0.02409971621935644}
+{"request": {"basket": [3], "zipCode": 1879, "totalAmount": 54.0}, "response": 0.04908869702890677}
+{"request": {"basket": [3, 0, 2, 1], "zipCode": null, "totalAmount": 240.0}, "response": 0.008769234814392712}
+{"request": {"basket": [4, 1, 1, 3, 4, 4, 2], "zipCode": 3835, "totalAmount": 266.0}, "response": 0.07595252047308479}
+{"request": {"basket": [1, 1, 0], "zipCode": 3130, "totalAmount": 156.0}, "response": 0.005066090124132684}
+{"request": {"basket": [2, 4, 0, 0, 3, 1, 0, 1], "zipCode": 7489, "totalAmount": 456.0}, "response": 0.003945714969790694}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 320.0}, "response": 0.09382654332190754}
+{"request": {"basket": null, "zipCode": 5985, "totalAmount": 104.0}, "response": 0.03739804973962251}
+{"request": {"basket": [3], "zipCode": 1699, "totalAmount": 55.0}, "response": 0.046637808761776534}
+{"request": {"basket": [1, 0, 1, 4, 1, 2], "zipCode": 9834, "totalAmount": 366.0}, "response": 0.004696205348780801}
+{"request": {"basket": [3, 3, 1, 1, 0, 0], "zipCode": 2563, "totalAmount": 60.0}, "response": 0.002615754202795801}
+{"request": {"basket": null, "zipCode": 5628, "totalAmount": 810.0}, "response": 0.43360938829442963}
+{"request": {"basket": [3, 1], "zipCode": 1757, "totalAmount": 64.0}, "response": 0.023027955562185447}
+{"request": {"basket": [3, 2, 4, 3, 0, 2], "zipCode": 3239, "totalAmount": 150.0}, "response": 0.018003376371937625}
+{"request": {"basket": [2, 4, 4, 0, 1], "zipCode": 4039, "totalAmount": 300.0}, "response": 0.035699727813490956}
+{"request": {"basket": [3, 3, 1, 3, 0, 4, 4, 1, 1], "zipCode": null, "totalAmount": 288.0}, "response": 0.029497142966127054}
+{"request": {"basket": [3, 3, 3], "zipCode": 7323, "totalAmount": 66.0}, "response": 0.07420282893684614}
+{"request": {"basket": [1, 2, 1, 3, 2, 4, 0, 4, 4, 1], "zipCode": 3152, "totalAmount": 320.0}, "response": 0.009434505690900366}
+{"request": {"basket": [2], "zipCode": 3716, "totalAmount": 66.0}, "response": 0.018184027749722838}
+{"request": {"basket": [2, 2], "zipCode": 9615, "totalAmount": 40.0}, "response": 0.007092923694571337}
+{"request": {"basket": [3, 3], "zipCode": 6112, "totalAmount": 72.0}, "response": 0.06724460970119145}
+{"request": {"basket": [4, 4, 0, 0, 3, 3, 1], "zipCode": null, "totalAmount": 497.0}, "response": 0.10954342213853593}
+{"request": {"basket": [1, 1, 1, 4, 1, 1, 0, 4, 2, 3], "zipCode": 1167, "totalAmount": 500.0}, "response": 0.0040283921759879104}
+{"request": {"basket": [3, 2, 4, 1, 3, 2, 1, 2], "zipCode": 4507, "totalAmount": 520.0}, "response": 0.015191333940722671}
+{"request": {"basket": [0, 4, 4, 3, 2], "zipCode": null, "totalAmount": 140.0}, "response": 0.05173060205456538}
+{"request": {"basket": [4], "zipCode": 6114, "totalAmount": 39.0}, "response": 0.06975305126728351}
+{"request": {"basket": [4, 0, 3, 4, 2, 4, 4], "zipCode": null, "totalAmount": 308.0}, "response": 0.2985622020635224}
+{"request": {"basket": [4, 3, 1, 2, 0, 3], "zipCode": null, "totalAmount": 282.0}, "response": 0.02650845447645363}
+{"request": {"basket": null, "zipCode": 7542, "totalAmount": 270.0}, "response": 0.06228985869535672}
+{"request": {"basket": [3, 2, 3, 2, 0, 3, 0], "zipCode": 1968, "totalAmount": 224.0}, "response": 0.007009447995561421}
+{"request": {"basket": null, "zipCode": 6032, "totalAmount": 70.0}, "response": 0.03962121676658999}
+{"request": {"basket": [1, 3], "zipCode": null, "totalAmount": 122.0}, "response": 0.02634664981068873}
+{"request": {"basket": [1, 1, 1, 3, 1, 4, 3, 2], "zipCode": 6122, "totalAmount": 520.0}, "response": 0.013740208418936323}
+{"request": {"basket": [2, 3, 0], "zipCode": 1927, "totalAmount": null}, "response": 0.01841020052161894}
+{"request": {"basket": [4, 0, 0, 4, 0, 1, 0, 2], "zipCode": 3402, "totalAmount": null}, "response": 0.006204554061396903}
+{"request": {"basket": null, "zipCode": 5964, "totalAmount": 276.0}, "response": 0.08703806671981536}
+{"request": {"basket": [0, 1, 0, 1, 3, 2, 0, 3, 2], "zipCode": 9661, "totalAmount": null}, "response": 0.00047526379594093997}
+{"request": {"basket": [3, 3, 1, 3, 0, 3], "zipCode": 6990, "totalAmount": 438.0}, "response": 0.0895392937901876}
+{"request": {"basket": null, "zipCode": 6592, "totalAmount": 749.0}, "response": 0.36404679765262143}
+{"request": {"basket": [0, 4, 1, 2], "zipCode": 5045, "totalAmount": null}, "response": 0.014626165222853838}
+{"request": {"basket": null, "zipCode": 5799, "totalAmount": 120.0}, "response": 0.048592825945064574}
+{"request": {"basket": [0, 4, 3, 2, 4], "zipCode": 4340, "totalAmount": 390.0}, "response": 0.13825043784352609}
+{"request": {"basket": [2, 2, 2, 3, 4], "zipCode": null, "totalAmount": null}, "response": 0.018943470557667902}
+{"request": {"basket": null, "zipCode": 8273, "totalAmount": 168.0}, "response": 0.058225630846869304}
+{"request": {"basket": [4, 4, 2, 4, 4], "zipCode": 3058, "totalAmount": 265.0}, "response": 0.610127098449155}
+{"request": {"basket": [1, 1, 3, 0, 2, 4], "zipCode": 9503, "totalAmount": 456.0}, "response": 0.019189093589181395}
+{"request": {"basket": [0, 0, 1, 2, 0], "zipCode": 9637, "totalAmount": 250.0}, "response": 0.001495896364555421}
+{"request": {"basket": null, "zipCode": 8128, "totalAmount": 148.0}, "response": 0.054382406101335816}
+{"request": {"basket": [4, 1], "zipCode": 3488, "totalAmount": 106.0}, "response": 0.04113821136082054}
+{"request": {"basket": [1, 1], "zipCode": 6886, "totalAmount": 174.0}, "response": 0.011572774608886066}
+{"request": {"basket": [3, 0, 0, 3, 0, 3, 1, 4, 2, 4], "zipCode": null, "totalAmount": null}, "response": 0.011750432975382795}
+{"request": {"basket": [1, 1, 0, 0, 3], "zipCode": null, "totalAmount": 250.0}, "response": 0.003881364435241848}
+{"request": {"basket": [3, 4, 1, 3, 1, 3, 2, 2, 2], "zipCode": 5598, "totalAmount": 369.0}, "response": 0.011081026369265673}
+{"request": {"basket": [3, 3, 0, 0, 1, 4], "zipCode": 2615, "totalAmount": null}, "response": 0.023614421248584785}
+{"request": {"basket": [4, 0, 1, 0, 3], "zipCode": 1453, "totalAmount": 220.0}, "response": 0.01591483555312101}
+{"request": {"basket": [3, 2, 2, 2, 3, 0], "zipCode": 3238, "totalAmount": 252.0}, "response": 0.006365956451223541}
+{"request": {"basket": [3, 3, 1, 1], "zipCode": 6531, "totalAmount": null}, "response": 0.02503496731297285}
+{"request": {"basket": [2], "zipCode": 9445, "totalAmount": 123.0}, "response": 0.022035115157996}
+{"request": {"basket": [1, 3], "zipCode": null, "totalAmount": null}, "response": 0.041309105367447294}
+{"request": {"basket": [1, 2, 0, 1, 2, 1, 4], "zipCode": 9393, "totalAmount": 287.0}, "response": 0.001597548623993402}
+{"request": {"basket": [3, 4, 0, 0, 3], "zipCode": null, "totalAmount": 250.0}, "response": 0.050052792895595735}
+{"request": {"basket": [0, 1, 1, 0, 1, 2, 0, 4, 3, 0], "zipCode": 2078, "totalAmount": 420.0}, "response": 0.0006706970917790612}
+{"request": {"basket": [4, 1, 1, 4, 4, 3], "zipCode": 3383, "totalAmount": 318.0}, "response": 0.18218271080129694}
+{"request": {"basket": [1, 1, 3, 4, 3, 3], "zipCode": 6847, "totalAmount": 72.0}, "response": 0.03482609500841745}
+{"request": {"basket": null, "zipCode": 1572, "totalAmount": null}, "response": 0.0748500534919426}
+{"request": {"basket": [1, 0, 4, 0, 2], "zipCode": 5992, "totalAmount": 245.0}, "response": 0.006664455711662173}
+{"request": {"basket": [4, 0, 2, 2], "zipCode": 5452, "totalAmount": null}, "response": 0.014057276210502739}
+{"request": {"basket": null, "zipCode": 3785, "totalAmount": 23.0}, "response": 0.03296460324870907}
+{"request": {"basket": [2], "zipCode": 9213, "totalAmount": 10.0}, "response": 0.015154765801277672}
+{"request": {"basket": [0, 0, 2, 4, 0, 1], "zipCode": 6936, "totalAmount": 192.0}, "response": 0.002399277454323014}
+{"request": {"basket": null, "zipCode": 3845, "totalAmount": null}, "response": 0.0617391131424329}
+{"request": {"basket": [3, 1, 4, 0, 1, 0, 1, 1, 4], "zipCode": 3194, "totalAmount": 441.0}, "response": 0.00698537739715806}
+{"request": {"basket": [4, 3, 4, 2, 3, 2, 4], "zipCode": 3348, "totalAmount": 140.0}, "response": 0.13914079733194162}
+{"request": {"basket": [0], "zipCode": 5545, "totalAmount": 120.0}, "response": 0.021361571547125324}
+{"request": {"basket": [0, 1, 3, 1, 2, 4, 4, 0, 0, 4], "zipCode": 3569, "totalAmount": null}, "response": 0.004554035101614108}
+{"request": {"basket": null, "zipCode": 3230, "totalAmount": 53.0}, "response": 0.038028558211415674}
+{"request": {"basket": [1], "zipCode": 3975, "totalAmount": 71.0}, "response": 0.018295240550064325}
+{"request": {"basket": [3, 3, 4, 1, 2, 0, 2], "zipCode": 1339, "totalAmount": 413.0}, "response": 0.022568274925334152}
+{"request": {"basket": [4, 0, 3, 2, 0], "zipCode": 5223, "totalAmount": null}, "response": 0.019068842199855475}
+{"request": {"basket": [2, 1, 0, 1], "zipCode": 9370, "totalAmount": 116.0}, "response": 0.0020017123829092105}
+{"request": {"basket": [2], "zipCode": 4177, "totalAmount": null}, "response": 0.03432421135008377}
+{"request": {"basket": [1, 4], "zipCode": 2604, "totalAmount": 160.0}, "response": 0.09310176728965273}
+{"request": {"basket": [3, 3, 4, 1], "zipCode": 9752, "totalAmount": 84.0}, "response": 0.06145390776327022}
+{"request": {"basket": null, "zipCode": 5013, "totalAmount": 168.0}, "response": 0.05852699716623906}
+{"request": {"basket": [4, 4, 0, 4, 2, 2, 2, 0, 3], "zipCode": null, "totalAmount": 828.0}, "response": 0.13541149941592937}
+{"request": {"basket": [0, 4, 0, 1, 3, 3], "zipCode": 6736, "totalAmount": 60.0}, "response": 0.011632476572480233}
+{"request": {"basket": [4, 3, 0, 0, 2, 1, 2, 1, 4], "zipCode": 4801, "totalAmount": 1026.0}, "response": 0.07245820883434381}
+{"request": {"basket": [0, 0, 4, 3, 2, 4, 0, 4], "zipCode": 7686, "totalAmount": 608.0}, "response": 0.2600327867334412}
+{"request": {"basket": [0, 2], "zipCode": null, "totalAmount": null}, "response": 0.015241494815930005}
+{"request": {"basket": null, "zipCode": 8689, "totalAmount": 245.0}, "response": 0.07781094943939294}
+{"request": {"basket": [0, 0, 2, 2, 3, 3], "zipCode": 5171, "totalAmount": null}, "response": 0.0053977527808252825}
+{"request": {"basket": [3, 1, 3, 4, 3], "zipCode": 2003, "totalAmount": 570.0}, "response": 0.371024683854634}
+{"request": {"basket": [0], "zipCode": 7770, "totalAmount": 35.0}, "response": 0.014783669347243233}
+{"request": {"basket": [4, 2, 3, 2, 3, 3, 3, 1], "zipCode": 4536, "totalAmount": null}, "response": 0.03860355906523236}
+{"request": {"basket": [2, 4, 1, 0, 0], "zipCode": 8850, "totalAmount": 315.0}, "response": 0.0044668913986434175}
+{"request": {"basket": [0, 3, 3, 1, 4, 1, 1], "zipCode": null, "totalAmount": 70.0}, "response": 0.0049039854729721185}
+{"request": {"basket": [0, 4, 0, 0, 1, 2], "zipCode": 8083, "totalAmount": 480.0}, "response": 0.007261728457769341}
+{"request": {"basket": [3, 1, 1, 0, 2, 0], "zipCode": null, "totalAmount": 252.0}, "response": 0.001808398780415034}
+{"request": {"basket": [1, 1, 1, 1, 2, 3, 0], "zipCode": null, "totalAmount": 413.0}, "response": 0.0014811666717204936}
+{"request": {"basket": [4, 0, 1, 4, 3], "zipCode": 9687, "totalAmount": 50.0}, "response": 0.027943565188402006}
+{"request": {"basket": [3, 0, 2, 1, 3, 3, 0, 0, 2], "zipCode": 9343, "totalAmount": 450.0}, "response": 0.003247042366244284}
+{"request": {"basket": [1], "zipCode": 6261, "totalAmount": 99.0}, "response": 0.020302982827394466}
+{"request": {"basket": [1, 4, 3, 4], "zipCode": 4213, "totalAmount": 196.0}, "response": 0.13346472849271243}
+{"request": {"basket": [0, 2, 2, 1, 3, 4, 3], "zipCode": 2925, "totalAmount": null}, "response": 0.011514201425405967}
+{"request": {"basket": [4, 0, 1, 3, 0, 2, 1, 1, 2, 0, 2], "zipCode": 5045, "totalAmount": 814.0}, "response": 0.0015105749175744513}
+{"request": {"basket": [4, 1, 1, 2, 0, 2, 2, 1, 1], "zipCode": 7025, "totalAmount": 693.0}, "response": 0.0015327977117597022}
+{"request": {"basket": [2, 1], "zipCode": 5372, "totalAmount": null}, "response": 0.016222258053153384}
+{"request": {"basket": [3, 0, 1, 3], "zipCode": 6209, "totalAmount": null}, "response": 0.026588528507353975}
+{"request": {"basket": [1, 4, 1, 3], "zipCode": 3859, "totalAmount": 196.0}, "response": 0.03354466426553873}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 180.0}, "response": 0.056219921799318964}
+{"request": {"basket": [4], "zipCode": 9683, "totalAmount": null}, "response": 0.14213780357900835}
+{"request": {"basket": [3, 1, 0, 1], "zipCode": 6321, "totalAmount": 264.0}, "response": 0.009820245199754375}
+{"request": {"basket": [4, 2, 0, 2, 1, 3, 4, 1], "zipCode": null, "totalAmount": null}, "response": 0.007145563966818145}
+{"request": {"basket": [3, 2, 4, 4], "zipCode": 1681, "totalAmount": 216.0}, "response": 0.14681451033393728}
+{"request": {"basket": [0, 3, 0, 2, 4], "zipCode": null, "totalAmount": null}, "response": 0.017633212630372323}
+{"request": {"basket": [2], "zipCode": 6922, "totalAmount": 15.0}, "response": 0.015452289209383687}
+{"request": {"basket": null, "zipCode": 4029, "totalAmount": 440.0}, "response": 0.14962889356303077}
+{"request": {"basket": [3, 2, 2, 4, 4, 4, 3, 4], "zipCode": 6389, "totalAmount": 80.0}, "response": 0.20364568528766916}
+{"request": {"basket": [2], "zipCode": 5594, "totalAmount": 95.0}, "response": 0.021071912970298954}
+{"request": {"basket": [1, 4, 2], "zipCode": 1286, "totalAmount": 210.0}, "response": 0.02883889693548581}
+{"request": {"basket": null, "zipCode": 7242, "totalAmount": null}, "response": 0.07537480559474721}
+{"request": {"basket": [0, 0, 3], "zipCode": 3993, "totalAmount": null}, "response": 0.020507866969748396}
+{"request": {"basket": [3], "zipCode": 7676, "totalAmount": 28.0}, "response": 0.09198525391921038}
+{"request": {"basket": [4, 0, 1, 4, 0, 0, 1, 2], "zipCode": 4165, "totalAmount": 304.0}, "response": 0.007747963680675023}
+{"request": {"basket": [1, 2, 3, 2], "zipCode": 4180, "totalAmount": 460.0}, "response": 0.023090607738538903}
+{"request": {"basket": [4, 2, 4, 4], "zipCode": 3125, "totalAmount": 228.0}, "response": 0.22674592081552114}
+{"request": {"basket": [1, 1], "zipCode": null, "totalAmount": 136.0}, "response": 0.009562455738472662}
+{"request": {"basket": [3, 3, 3, 4, 3, 4], "zipCode": 6056, "totalAmount": null}, "response": 0.48737057635271314}
+{"request": {"basket": null, "zipCode": 3062, "totalAmount": 285.0}, "response": 0.0890672391200307}
+{"request": {"basket": [3, 4, 4, 4, 3], "zipCode": 4203, "totalAmount": 180.0}, "response": 0.42481123860786224}
+{"request": {"basket": [2, 2, 3, 2, 0, 4, 0, 4], "zipCode": 3345, "totalAmount": 304.0}, "response": 0.010338498933175481}
+{"request": {"basket": [0, 1], "zipCode": 1616, "totalAmount": 128.0}, "response": 0.010109341006740666}
+{"request": {"basket": null, "zipCode": 8624, "totalAmount": null}, "response": 0.06461948663057013}
+{"request": {"basket": [0, 3, 1, 4], "zipCode": null, "totalAmount": 72.0}, "response": 0.01941946274220004}
+{"request": {"basket": [2, 4, 3, 2, 2, 4, 0, 2, 3, 1, 3], "zipCode": 1840, "totalAmount": 660.0}, "response": 0.03272140543468915}
+{"request": {"basket": [3, 1, 3, 2, 4, 0, 3], "zipCode": 5346, "totalAmount": 651.0}, "response": 0.13079903857505784}
+{"request": {"basket": [1, 4], "zipCode": 3660, "totalAmount": 144.0}, "response": 0.04646136417371073}
+{"request": {"basket": [2], "zipCode": 7267, "totalAmount": null}, "response": 0.03670299854413431}
+{"request": {"basket": [4, 2, 3], "zipCode": 8805, "totalAmount": 279.0}, "response": 0.10398078028072971}
+{"request": {"basket": [3, 0, 3, 0, 0], "zipCode": 2349, "totalAmount": 450.0}, "response": 0.025373899355150317}
+{"request": {"basket": [3, 1, 1], "zipCode": 5608, "totalAmount": 189.0}, "response": 0.01596032976617726}
+{"request": {"basket": [3, 4, 2, 3, 3, 2, 2, 2, 0], "zipCode": 8405, "totalAmount": 90.0}, "response": 0.004047233905909894}
+{"request": {"basket": [4, 4, 1, 3, 4, 4, 2, 2, 0, 3, 1], "zipCode": 3726, "totalAmount": 671.0}, "response": 0.16856807875213564}
+{"request": {"basket": [2, 1, 3], "zipCode": 1810, "totalAmount": 318.0}, "response": 0.027525326494115255}
+{"request": {"basket": [1, 4, 4, 2], "zipCode": 8009, "totalAmount": null}, "response": 0.06052315254174516}
+{"request": {"basket": [3, 1, 0], "zipCode": null, "totalAmount": 30.0}, "response": 0.008299426040537058}
+{"request": {"basket": [2, 0, 4, 3, 3, 1, 3, 4, 3], "zipCode": null, "totalAmount": 414.0}, "response": 0.1346040110440122}
+{"request": {"basket": [0, 4, 1, 1, 0], "zipCode": 5248, "totalAmount": 50.0}, "response": 0.0029368418878307706}
+{"request": {"basket": null, "zipCode": 4358, "totalAmount": 96.0}, "response": 0.04431179757570943}
+{"request": {"basket": null, "zipCode": 5652, "totalAmount": 324.0}, "response": 0.08704664512724727}
+{"request": {"basket": [2, 4], "zipCode": 5260, "totalAmount": null}, "response": 0.052680736383077374}
+{"request": {"basket": [1, 2, 0, 0], "zipCode": 2934, "totalAmount": 40.0}, "response": 0.0035618013887597417}
+{"request": {"basket": null, "zipCode": 3661, "totalAmount": null}, "response": 0.0701195836155895}
+{"request": {"basket": [4, 2, 0, 3, 3, 0], "zipCode": 4270, "totalAmount": 60.0}, "response": 0.012333660429358627}
+{"request": {"basket": [1, 3, 1], "zipCode": 7862, "totalAmount": 150.0}, "response": 0.01393509228528622}
+{"request": {"basket": [0, 0, 0, 3, 3], "zipCode": null, "totalAmount": 210.0}, "response": 0.009882846486793648}
+{"request": {"basket": [2, 1], "zipCode": 3241, "totalAmount": 144.0}, "response": 0.011075974126532695}
+{"request": {"basket": [2, 2, 0, 3], "zipCode": 8370, "totalAmount": 188.0}, "response": 0.008175621461221015}
+{"request": {"basket": [0], "zipCode": null, "totalAmount": 25.0}, "response": 0.014162132671968367}
+{"request": {"basket": [1, 4, 3, 4, 0], "zipCode": null, "totalAmount": 125.0}, "response": 0.04666082684673776}
+{"request": {"basket": [3, 3], "zipCode": null, "totalAmount": 156.0}, "response": 0.08397062726487012}
+{"request": {"basket": null, "zipCode": 2770, "totalAmount": 85.0}, "response": 0.04293067574680495}
+{"request": {"basket": [3, 4, 4, 1, 3, 0, 3, 2], "zipCode": 9371, "totalAmount": 104.0}, "response": 0.03641623314469213}
+{"request": {"basket": [2, 3, 2, 2, 2], "zipCode": 1660, "totalAmount": 50.0}, "response": 0.0022955754639316798}
+{"request": {"basket": [4, 0, 0, 2, 1, 1, 3, 1, 0], "zipCode": 6492, "totalAmount": 90.0}, "response": 0.0004042934642475616}
+{"request": {"basket": [0, 1, 0, 2, 1, 0, 3], "zipCode": null, "totalAmount": 140.0}, "response": 0.0005174908463694017}
+{"request": {"basket": null, "zipCode": 3853, "totalAmount": 455.0}, "response": 0.16202718070986805}
+{"request": {"basket": [1, 0, 0, 3, 4, 4, 4], "zipCode": 2724, "totalAmount": 168.0}, "response": 0.04645463775174482}
+{"request": {"basket": [1, 4, 0, 0, 1, 3, 2, 1, 2], "zipCode": 4622, "totalAmount": 450.0}, "response": 0.0031197301827445125}
+{"request": {"basket": null, "zipCode": 7284, "totalAmount": 51.0}, "response": 0.03773625069970513}
+{"request": {"basket": [2, 2], "zipCode": null, "totalAmount": 20.0}, "response": 0.006693641344123833}
+{"request": {"basket": [3, 0, 3, 1, 3], "zipCode": 8254, "totalAmount": 220.0}, "response": 0.03179216224552864}
+{"request": {"basket": [3, 4, 2, 3], "zipCode": null, "totalAmount": 40.0}, "response": 0.05089013937830164}
+{"request": {"basket": [3, 4], "zipCode": null, "totalAmount": 104.0}, "response": 0.10318612533813144}
+{"request": {"basket": [2, 4, 4, 3], "zipCode": 9361, "totalAmount": null}, "response": 0.1555669681728703}
+{"request": {"basket": [1, 0, 0], "zipCode": 6434, "totalAmount": 90.0}, "response": 0.003671868738798915}
+{"request": {"basket": [1, 2, 1, 4, 2, 4], "zipCode": 4877, "totalAmount": 186.0}, "response": 0.01090131021277214}
+{"request": {"basket": [3, 0, 2, 2], "zipCode": 4895, "totalAmount": 236.0}, "response": 0.00984342462929338}
+{"request": {"basket": [1, 4, 3, 0, 0], "zipCode": 4682, "totalAmount": 265.0}, "response": 0.020261063135014613}
+{"request": {"basket": [2, 4, 0, 4, 4, 0, 3, 2], "zipCode": 6368, "totalAmount": 392.0}, "response": 0.06235807645832248}
+{"request": {"basket": [1, 2, 2, 0], "zipCode": null, "totalAmount": 288.0}, "response": 0.0037779785777142787}
+{"request": {"basket": null, "zipCode": 4209, "totalAmount": 40.0}, "response": 0.034129905566547505}
+{"request": {"basket": [0, 4, 0, 4, 2, 0, 0], "zipCode": null, "totalAmount": 273.0}, "response": 0.00620005485895617}
+{"request": {"basket": [0, 2, 3, 1, 0], "zipCode": 8367, "totalAmount": 235.0}, "response": 0.004208706046940449}
+{"request": {"basket": null, "zipCode": 2120, "totalAmount": 140.0}, "response": 0.052777264731778926}
+{"request": {"basket": [1, 3, 1, 1, 2, 0, 2, 4, 3, 2], "zipCode": 7248, "totalAmount": 680.0}, "response": 0.005805886972047556}
+{"request": {"basket": [2, 0, 3], "zipCode": 1747, "totalAmount": 270.0}, "response": 0.024236271868354368}
+{"request": {"basket": [4], "zipCode": null, "totalAmount": 36.0}, "response": 0.06334362085294375}
+{"request": {"basket": [4], "zipCode": null, "totalAmount": 52.0}, "response": 0.06719729761358162}
+{"request": {"basket": null, "zipCode": 2930, "totalAmount": 265.0}, "response": 0.08075095886277261}
+{"request": {"basket": [0, 0, 2, 0, 0], "zipCode": 5744, "totalAmount": 50.0}, "response": 0.0007046382655048942}
+{"request": {"basket": [0, 2, 2, 1, 0, 3, 0], "zipCode": 1494, "totalAmount": 553.0}, "response": 0.003035301133326392}
+{"request": {"basket": [0, 0, 2, 0, 3, 3], "zipCode": 6557, "totalAmount": 258.0}, "response": 0.006061483531038247}
+{"request": {"basket": [1], "zipCode": null, "totalAmount": 59.0}, "response": 0.01596286885470379}
+{"request": {"basket": [1, 2, 1], "zipCode": null, "totalAmount": null}, "response": 0.006665786542849119}
+{"request": {"basket": [3, 4, 2, 3, 4, 3, 0], "zipCode": 9246, "totalAmount": 70.0}, "response": 0.0669118862835653}
+{"request": {"basket": null, "zipCode": 2436, "totalAmount": 40.0}, "response": 0.03412661329674219}
+{"request": {"basket": [1], "zipCode": null, "totalAmount": 24.0}, "response": 0.013931023273695973}
+{"request": {"basket": [4], "zipCode": 6494, "totalAmount": 66.0}, "response": 0.07318357279807833}
+{"request": {"basket": [2], "zipCode": 2427, "totalAmount": 46.0}, "response": 0.01742944218964641}
+{"request": {"basket": [3, 2, 3, 3, 3, 3], "zipCode": 2040, "totalAmount": null}, "response": 0.24423823119894736}
+{"request": {"basket": [0], "zipCode": 9194, "totalAmount": 43.0}, "response": 0.015876270956166966}
+{"request": {"basket": [3, 4], "zipCode": 4547, "totalAmount": 62.0}, "response": 0.09639796183124306}
+{"request": {"basket": [0, 3, 0, 1, 0, 3], "zipCode": 3036, "totalAmount": 564.0}, "response": 0.018526317765339306}
+{"request": {"basket": [4, 2, 1, 0, 1, 2], "zipCode": 7498, "totalAmount": 366.0}, "response": 0.004642269538486221}
+{"request": {"basket": [4, 1, 1, 4, 2, 2, 3, 2], "zipCode": null, "totalAmount": 144.0}, "response": 0.005087130815769937}
+{"request": {"basket": [2, 2, 2, 0, 2, 1, 2, 1], "zipCode": 7750, "totalAmount": 80.0}, "response": 7.876348681442291e-05}
+{"request": {"basket": [2, 3, 0], "zipCode": 3588, "totalAmount": 216.0}, "response": 0.019684823426851437}
+{"request": {"basket": [4, 1], "zipCode": 1109, "totalAmount": 96.0}, "response": 0.03814215021454378}
+{"request": {"basket": [2, 3, 4, 3, 3], "zipCode": null, "totalAmount": 50.0}, "response": 0.06764372892675129}
+{"request": {"basket": [0], "zipCode": null, "totalAmount": 38.0}, "response": 0.01489701748454127}
+{"request": {"basket": [4, 3, 3, 0, 4], "zipCode": 7368, "totalAmount": 125.0}, "response": 0.13002115313040316}
+{"request": {"basket": [2], "zipCode": 7142, "totalAmount": 95.0}, "response": 0.021071912970298954}
+{"request": {"basket": [4, 1, 1, 4], "zipCode": null, "totalAmount": null}, "response": 0.05523552405981273}
+{"request": {"basket": [2, 1], "zipCode": 6213, "totalAmount": null}, "response": 0.015582793045363915}
+{"request": {"basket": [3, 2, 4, 3, 4], "zipCode": 5184, "totalAmount": 265.0}, "response": 0.20674591471212256}
+{"request": {"basket": [3, 3], "zipCode": 7088, "totalAmount": 136.0}, "response": 0.08387177646160723}
+{"request": {"basket": [3, 0, 4, 3, 0, 4, 4, 1, 3], "zipCode": 9797, "totalAmount": null}, "response": 0.10652049529985046}
+{"request": {"basket": [3, 3], "zipCode": null, "totalAmount": 176.0}, "response": 0.09024851211639108}
+{"request": {"basket": [4], "zipCode": 8529, "totalAmount": null}, "response": 0.14215574744817153}
+{"request": {"basket": [0, 4, 4, 2, 2, 2, 0, 2, 2], "zipCode": 6451, "totalAmount": 603.0}, "response": 0.006427348469122039}
+{"request": {"basket": [3, 4, 2, 3, 2, 4], "zipCode": 4570, "totalAmount": 336.0}, "response": 0.14884048359688187}
+{"request": {"basket": [0, 3, 1, 3, 4, 0, 0], "zipCode": null, "totalAmount": 329.0}, "response": 0.013863151922677681}
+{"request": {"basket": [3, 2, 2, 3, 3, 2, 1, 4], "zipCode": 8789, "totalAmount": null}, "response": 0.015463910556312232}
+{"request": {"basket": [1, 4, 4, 4, 4, 3], "zipCode": 2648, "totalAmount": 234.0}, "response": 0.422523851066099}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 185.0}, "response": 0.05727676265397247}
+{"request": {"basket": null, "zipCode": 9687, "totalAmount": 412.0}, "response": 0.10522361358241202}
+{"request": {"basket": [0, 2, 0, 4], "zipCode": 3275, "totalAmount": 280.0}, "response": 0.01727497493231605}
+{"request": {"basket": [4, 2, 3, 4, 1, 1], "zipCode": 2896, "totalAmount": 258.0}, "response": 0.08717306494006113}
+{"request": {"basket": [1, 0, 4], "zipCode": 1984, "totalAmount": 255.0}, "response": 0.0332251906133282}
+{"request": {"basket": null, "zipCode": 2841, "totalAmount": null}, "response": 0.07038429794415343}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 477.0}, "response": 0.1614046881781249}
+{"request": {"basket": [1, 2, 0, 2, 3], "zipCode": null, "totalAmount": 320.0}, "response": 0.005565921129883348}
+{"request": {"basket": [1], "zipCode": 5899, "totalAmount": 57.0}, "response": 0.017162937946151025}
+{"request": {"basket": [3], "zipCode": null, "totalAmount": null}, "response": 0.0893562690284397}
+{"request": {"basket": null, "zipCode": 9326, "totalAmount": 195.0}, "response": 0.06477028820669704}
+{"request": {"basket": null, "zipCode": 2925, "totalAmount": 312.0}, "response": 0.09901365851256917}
+{"request": {"basket": [4, 3, 1], "zipCode": 3111, "totalAmount": 75.0}, "response": 0.07509053487098548}
+{"request": {"basket": [3, 1, 0, 2, 3], "zipCode": 9587, "totalAmount": 120.0}, "response": 0.007787090144944924}
+{"request": {"basket": [2, 1, 3, 1, 3, 4, 4], "zipCode": 1766, "totalAmount": 196.0}, "response": 0.04034085074015744}
+{"request": {"basket": [2], "zipCode": 8745, "totalAmount": 50.0}, "response": 0.017700555803918525}
+{"request": {"basket": [2], "zipCode": null, "totalAmount": 66.0}, "response": 0.01721663805419974}
+{"request": {"basket": [3, 1, 1, 1, 0], "zipCode": 1532, "totalAmount": null}, "response": 0.0037812697082742347}
+{"request": {"basket": null, "zipCode": 9994, "totalAmount": 99.0}, "response": 0.04500175858694898}
+{"request": {"basket": [1, 3, 4, 4, 0, 3, 3, 2, 4, 2, 0], "zipCode": 2800, "totalAmount": 737.0}, "response": 0.16115315360425755}
+{"request": {"basket": [0], "zipCode": 3546, "totalAmount": 71.0}, "response": 0.018519162532044893}
+{"request": {"basket": [0], "zipCode": null, "totalAmount": 17.0}, "response": 0.013727778171177834}
+{"request": {"basket": [0, 3, 0, 1, 0, 1, 0], "zipCode": null, "totalAmount": 525.0}, "response": 0.002277950495018417}
+{"request": {"basket": [3], "zipCode": 1566, "totalAmount": 60.0}, "response": 0.047577553102451854}
+{"request": {"basket": [2], "zipCode": 9761, "totalAmount": 42.0}, "response": 0.015843659322398302}
+{"request": {"basket": [3, 0, 0, 3, 4, 3, 4, 4, 3, 4], "zipCode": 6007, "totalAmount": 440.0}, "response": 0.6055429239046073}
+{"request": {"basket": [0], "zipCode": 5005, "totalAmount": 16.0}, "response": 0.014873595890511713}
+{"request": {"basket": [1, 1, 0, 0, 2], "zipCode": 5638, "totalAmount": 250.0}, "response": 0.0013046365238064135}
+{"request": {"basket": [1, 2, 4], "zipCode": 6760, "totalAmount": 30.0}, "response": 0.012698025657734016}
+{"request": {"basket": [4, 3, 1, 3], "zipCode": 6628, "totalAmount": 124.0}, "response": 0.10921205077535373}
+{"request": {"basket": [0, 3, 3, 4, 2], "zipCode": 1927, "totalAmount": 305.0}, "response": 0.05949991952792694}
+{"request": {"basket": null, "zipCode": 8007, "totalAmount": 66.0}, "response": 0.039122174375876555}
+{"request": {"basket": [4, 3, 2, 2, 3, 0, 4, 0, 1], "zipCode": 2059, "totalAmount": 936.0}, "response": 0.13960121758376676}
+{"request": {"basket": [1, 1], "zipCode": 7830, "totalAmount": 20.0}, "response": 0.005885996058562165}
+{"request": {"basket": [3], "zipCode": 9595, "totalAmount": 44.0}, "response": 0.04592319683324126}
+{"request": {"basket": [3, 3, 2, 2, 2], "zipCode": null, "totalAmount": 85.0}, "response": 0.006752183032071903}
+{"request": {"basket": [3, 1, 2, 0, 3, 4, 1, 4], "zipCode": 8927, "totalAmount": 472.0}, "response": 0.05269420466455278}
+{"request": {"basket": [4, 3, 4, 4], "zipCode": 8391, "totalAmount": 368.0}, "response": 0.5419841229231821}
+{"request": {"basket": null, "zipCode": 6482, "totalAmount": 126.0}, "response": 0.0492891555625129}
+{"request": {"basket": [3, 1, 0, 3], "zipCode": 6756, "totalAmount": 388.0}, "response": 0.04397969200973842}
+{"request": {"basket": [3, 1, 0, 4], "zipCode": 8690, "totalAmount": 340.0}, "response": 0.05572291553960464}
+{"request": {"basket": [2], "zipCode": 8609, "totalAmount": null}, "response": 0.036732092656878844}
+{"request": {"basket": null, "zipCode": 5536, "totalAmount": 72.0}, "response": 0.04087043621971396}
+{"request": {"basket": null, "zipCode": 4322, "totalAmount": 152.0}, "response": 0.05521095746384498}
+{"request": {"basket": [2, 3, 4, 0, 0, 3, 3], "zipCode": 3000, "totalAmount": 350.0}, "response": 0.04874583494042755}
+{"request": {"basket": [1, 4, 1, 3], "zipCode": null, "totalAmount": null}, "response": 0.03654656313541611}
+{"request": {"basket": [3, 4, 0, 1, 1], "zipCode": null, "totalAmount": null}, "response": 0.016591021236909413}
+{"request": {"basket": null, "zipCode": null, "totalAmount": null}, "response": 0.07014743090483284}
+{"request": {"basket": [2, 4, 2, 1, 0, 1, 1, 2], "zipCode": 2488, "totalAmount": null}, "response": 0.0006120022793118708}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 88.0}, "response": 0.03977548997538669}
+{"request": {"basket": [1, 3, 2, 1, 0, 3], "zipCode": 2333, "totalAmount": 144.0}, "response": 0.0036477706305819138}
+{"request": {"basket": [4, 2, 2, 4], "zipCode": null, "totalAmount": null}, "response": 0.06060597094079097}
+{"request": {"basket": [2, 3, 3, 0, 2], "zipCode": 1354, "totalAmount": null}, "response": 0.011839059198868261}
+{"request": {"basket": [3, 3], "zipCode": 7393, "totalAmount": 130.0}, "response": 0.06567412628414275}
+{"request": {"basket": [0, 3], "zipCode": 4179, "totalAmount": 20.0}, "response": 0.015260842599502495}
+{"request": {"basket": [3], "zipCode": null, "totalAmount": 76.0}, "response": 0.048874235838915016}
+{"request": {"basket": [1, 3, 2, 3], "zipCode": 8324, "totalAmount": 292.0}, "response": 0.03116185912327133}
+{"request": {"basket": [3, 2, 0, 4, 4], "zipCode": 1737, "totalAmount": 95.0}, "response": 0.04761880487670151}
+{"request": {"basket": [2, 1, 2, 4, 2, 3, 2], "zipCode": 4193, "totalAmount": 518.0}, "response": 0.012434722787873565}
+{"request": {"basket": null, "zipCode": 6096, "totalAmount": 25.0}, "response": 0.03025946665694214}
+{"request": {"basket": [3, 0], "zipCode": 3559, "totalAmount": 78.0}, "response": 0.0225556558262282}
+{"request": {"basket": [3, 2, 4, 3, 2, 4, 4], "zipCode": 4190, "totalAmount": 553.0}, "response": 0.452210070098461}
+{"request": {"basket": null, "zipCode": null, "totalAmount": null}, "response": 0.07014743090483284}
+{"request": {"basket": [2, 1, 2, 3], "zipCode": null, "totalAmount": 212.0}, "response": 0.008148328642807755}
+{"request": {"basket": [4, 1, 2], "zipCode": null, "totalAmount": 270.0}, "response": 0.03336226759187274}
+{"request": {"basket": null, "zipCode": 8106, "totalAmount": null}, "response": 0.07433914968300197}
+{"request": {"basket": null, "zipCode": 6147, "totalAmount": 306.0}, "response": 0.11200436921527641}
+{"request": {"basket": [0, 1, 2, 1], "zipCode": 7524, "totalAmount": 304.0}, "response": 0.0037240003228975523}
+{"request": {"basket": null, "zipCode": 1440, "totalAmount": 240.0}, "response": 0.06910534189574254}
+{"request": {"basket": null, "zipCode": 4060, "totalAmount": 160.0}, "response": 0.05688694070835195}
+{"request": {"basket": [3, 3, 4, 1, 0, 3, 2], "zipCode": null, "totalAmount": null}, "response": 0.029110704138917417}
+{"request": {"basket": null, "zipCode": 5304, "totalAmount": 213.0}, "response": 0.06548649558701382}
+{"request": {"basket": [0, 3], "zipCode": 3815, "totalAmount": 70.0}, "response": 0.03740835580420002}
+{"request": {"basket": [3, 4, 4, 4, 4], "zipCode": 5389, "totalAmount": 145.0}, "response": 0.5440494261523975}
+{"request": {"basket": [2, 1, 4, 0, 1, 4, 0], "zipCode": 4756, "totalAmount": null}, "response": 0.010564441035951154}
+{"request": {"basket": [4, 0, 2, 3, 1, 0], "zipCode": null, "totalAmount": null}, "response": 0.007820574410451513}
+{"request": {"basket": [0, 3, 0], "zipCode": 6440, "totalAmount": 330.0}, "response": 0.02774454132073988}
+{"request": {"basket": null, "zipCode": 5955, "totalAmount": 94.0}, "response": 0.07717410048292786}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 116.0}, "response": 0.04422009156953887}
+{"request": {"basket": [4], "zipCode": 9003, "totalAmount": 77.0}, "response": 0.08011913843308176}
+{"request": {"basket": [4, 3, 4, 1, 1, 3, 0, 4], "zipCode": 6563, "totalAmount": 464.0}, "response": 0.17580359152886396}
+{"request": {"basket": null, "zipCode": 3987, "totalAmount": 432.0}, "response": 0.15003778479298668}
+{"request": {"basket": [2], "zipCode": 3880, "totalAmount": 72.0}, "response": 0.01910748034799805}
+{"request": {"basket": [3, 0, 0, 4, 3, 1, 0, 4, 1, 4], "zipCode": 9710, "totalAmount": 790.0}, "response": 0.14312635417825129}
+{"request": {"basket": [3, 1, 4, 3], "zipCode": 5397, "totalAmount": null}, "response": 0.10962410498135457}
+{"request": {"basket": [4, 0, 2, 1, 3, 0, 4, 3, 1, 1, 4], "zipCode": 7547, "totalAmount": 396.0}, "response": 0.015876571481084133}
+{"request": {"basket": [0, 4, 4, 2, 2, 2], "zipCode": 4311, "totalAmount": 258.0}, "response": 0.015345089508301636}
+{"request": {"basket": [1, 3, 1], "zipCode": 1625, "totalAmount": 42.0}, "response": 0.009401856126418617}
+{"request": {"basket": [2, 0, 1, 1, 1], "zipCode": 2514, "totalAmount": 165.0}, "response": 0.001048815054593564}
+{"request": {"basket": null, "zipCode": 2725, "totalAmount": 80.0}, "response": 0.04115256360599256}
+{"request": {"basket": [2, 1, 2, 0, 2, 1, 0, 2, 0], "zipCode": null, "totalAmount": 225.0}, "response": 5.4654741827546374e-05}
+{"request": {"basket": [2, 3, 3, 4, 0, 3, 0, 0], "zipCode": 8929, "totalAmount": 176.0}, "response": 0.011372653305324141}
+{"request": {"basket": [0, 1, 4, 4, 4], "zipCode": 4879, "totalAmount": null}, "response": 0.11504826598302893}
+{"request": {"basket": [3, 3], "zipCode": 7868, "totalAmount": 102.0}, "response": 0.07474794515671933}
+{"request": {"basket": null, "zipCode": 6640, "totalAmount": 130.0}, "response": 0.05083398348806037}
+{"request": {"basket": [0], "zipCode": 4620, "totalAmount": 81.0}, "response": 0.01775895755984801}
+{"request": {"basket": [1, 4], "zipCode": 4991, "totalAmount": 118.0}, "response": 0.04229468413950402}
+{"request": {"basket": [1, 3], "zipCode": 2654, "totalAmount": 56.0}, "response": 0.01947700575279684}
+{"request": {"basket": [3, 2, 1, 4, 0, 1, 2], "zipCode": 5708, "totalAmount": 525.0}, "response": 0.011976720152667986}
+{"request": {"basket": [2, 4, 2, 2, 0, 0, 0, 3, 0], "zipCode": 6880, "totalAmount": null}, "response": 0.0008272319978361075}
+{"request": {"basket": [3], "zipCode": null, "totalAmount": 84.0}, "response": 0.050363856862321726}
+{"request": {"basket": [2, 3, 1], "zipCode": 3412, "totalAmount": 261.0}, "response": 0.04085134923918141}
+{"request": {"basket": [2, 0, 2, 2, 3, 2, 3, 1], "zipCode": null, "totalAmount": 192.0}, "response": 0.0009336258719934117}
+{"request": {"basket": [3, 4, 3, 1, 1, 3, 4], "zipCode": 6259, "totalAmount": 469.0}, "response": 0.44656942525944143}
+{"request": {"basket": [3, 0, 4, 0, 3, 0], "zipCode": null, "totalAmount": 438.0}, "response": 0.046923763960611174}
+{"request": {"basket": [4, 1], "zipCode": 9994, "totalAmount": 98.0}, "response": 0.03968042858533466}
+{"request": {"basket": [1, 2, 2, 0, 1], "zipCode": null, "totalAmount": null}, "response": 0.0013748605498485763}
+{"request": {"basket": [3], "zipCode": 5916, "totalAmount": 140.0}, "response": 0.06759767223912819}
+{"request": {"basket": [3, 3, 2], "zipCode": 4295, "totalAmount": 135.0}, "response": 0.040839522577533725}
+{"request": {"basket": [3, 4, 2, 4, 2, 0, 4, 0], "zipCode": null, "totalAmount": 184.0}, "response": 0.0260010454610511}
+{"request": {"basket": [0], "zipCode": null, "totalAmount": null}, "response": 0.032462981443607604}
+{"request": {"basket": [2, 3, 3, 0], "zipCode": 4645, "totalAmount": 92.0}, "response": 0.01572916234407328}
+{"request": {"basket": null, "zipCode": 2019, "totalAmount": 475.0}, "response": 0.17299961719899842}
+{"request": {"basket": [0, 2, 3, 0], "zipCode": null, "totalAmount": 244.0}, "response": 0.009020774132279674}
+{"request": {"basket": [4, 2], "zipCode": null, "totalAmount": null}, "response": 0.06521456239836307}
+{"request": {"basket": [4, 3, 1, 3, 3, 1, 0, 4, 0], "zipCode": 6526, "totalAmount": 594.0}, "response": 0.10147381221884334}
+{"request": {"basket": [3, 0, 1], "zipCode": 5313, "totalAmount": 150.0}, "response": 0.013485072117630108}
+{"request": {"basket": [2], "zipCode": null, "totalAmount": 92.0}, "response": 0.01904275134142883}
+{"request": {"basket": [2], "zipCode": 9102, "totalAmount": null}, "response": 0.03673248137172989}
+{"request": {"basket": [0, 4, 4, 0, 2], "zipCode": 2441, "totalAmount": 120.0}, "response": 0.018006460721919568}
+{"request": {"basket": null, "zipCode": 5259, "totalAmount": 25.0}, "response": 0.03149117327839117}
+{"request": {"basket": [1, 4, 2, 2, 1, 1], "zipCode": 4864, "totalAmount": 522.0}, "response": 0.00600568558486615}
+{"request": {"basket": [3, 2, 0, 3, 0], "zipCode": 1828, "totalAmount": null}, "response": 0.011981838745343826}
+{"request": {"basket": [1, 0, 4, 1, 0, 2, 0], "zipCode": 6827, "totalAmount": 546.0}, "response": 0.004244868617102797}
+{"request": {"basket": [3, 1, 0, 1, 3, 2, 3, 2, 4], "zipCode": 3568, "totalAmount": null}, "response": 0.006611476735430967}
+{"request": {"basket": [2, 0, 4, 3, 3], "zipCode": 4406, "totalAmount": 340.0}, "response": 0.07516108023003475}
+{"request": {"basket": [0, 2, 4], "zipCode": 8986, "totalAmount": 303.0}, "response": 0.04181168232602605}
+{"request": {"basket": [2, 2, 1, 2, 0], "zipCode": 8629, "totalAmount": null}, "response": 0.0014489411569991264}
+{"request": {"basket": null, "zipCode": 3706, "totalAmount": 30.0}, "response": 0.034836256685085866}
+{"request": {"basket": null, "zipCode": 2512, "totalAmount": null}, "response": 0.06882673432889021}
+{"request": {"basket": [3], "zipCode": 3931, "totalAmount": 19.0}, "response": 0.03784096734886958}
+{"request": {"basket": null, "zipCode": null, "totalAmount": 474.0}, "response": 0.1598076441274139}
+{"request": {"basket": [2, 4, 4, 0, 0], "zipCode": 2099, "totalAmount": null}, "response": 0.027917978694264607}
+{"request": {"basket": [0, 2, 1, 4], "zipCode": 2292, "totalAmount": null}, "response": 0.030824757412309486}
+{"request": {"basket": [4, 1, 2, 2, 4, 1, 4], "zipCode": 1302, "totalAmount": 420.0}, "response": 0.050020056159583444}
+{"request": {"basket": [3, 1, 3, 4], "zipCode": 8076, "totalAmount": 64.0}, "response": 0.055476072249705764}
+{"request": {"basket": null, "zipCode": 9340, "totalAmount": 540.0}, "response": 0.1886322388745324}
+{"request": {"basket": null, "zipCode": 4535, "totalAmount": 575.0}, "response": 0.2363887245709019}
+{"request": {"basket": [4, 1], "zipCode": 8723, "totalAmount": 20.0}, "response": 0.02923755054641382}
+{"request": {"basket": [2, 0], "zipCode": 7660, "totalAmount": 170.0}, "response": 0.012416091871339423}
+{"request": {"basket": [0], "zipCode": null, "totalAmount": null}, "response": 0.032462981443607604}
+{"request": {"basket": null, "zipCode": 8443, "totalAmount": null}, "response": 0.07185358210228164}
+{"request": {"basket": [4, 3], "zipCode": 9074, "totalAmount": null}, "response": 0.1696998536017084}
+{"request": {"basket": [3, 0], "zipCode": null, "totalAmount": 108.0}, "response": 0.02527698318118317}
+{"request": {"basket": [1, 1, 3, 4], "zipCode": null, "totalAmount": 284.0}, "response": 0.04321249200594589}
+{"request": {"basket": [4], "zipCode": 7226, "totalAmount": 25.0}, "response": 0.061148386578390265}
+{"request": {"basket": [4, 2, 1, 0], "zipCode": 9774, "totalAmount": 352.0}, "response": 0.02270685144771456}
+{"request": {"basket": null, "zipCode": 7865, "totalAmount": null}, "response": 0.07343210087308848}
+{"request": {"basket": [1], "zipCode": 7121, "totalAmount": 10.0}, "response": 0.014143166377490121}
+{"request": {"basket": [2, 3, 2, 0, 2, 1, 0], "zipCode": 1444, "totalAmount": null}, "response": 0.0009159572005032113}
+{"request": {"basket": null, "zipCode": 2784, "totalAmount": null}, "response": 0.07581894427105684}
