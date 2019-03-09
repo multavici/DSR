@@ -1,0 +1,17 @@
+digraph Tree {
+node [shape=box] ;
+rankdir=LR ;
+0 [label="X[0] <= 0.432\nmse = 3747654.435\nsamples = 100.0%\nvalue = 4504.349"] ;
+1 [label="X[6] <= 0.5\nmse = 2241571.905\nsamples = 40.5%\nvalue = 3037.807"] ;
+0 -> 1 [labeldistance=2.5, labelangle=-45, headlabel="True"] ;
+2 [label="mse = 1562120.147\nsamples = 26.9%\nvalue = 2465.985"] ;
+1 -> 2 ;
+3 [label="mse = 1648206.178\nsamples = 13.5%\nvalue = 4175.677"] ;
+1 -> 3 ;
+4 [label="X[2] <= 2.5\nmse = 2313139.278\nsamples = 59.5%\nvalue = 5502.271"] ;
+0 -> 4 [labeldistance=2.5, labelangle=45, headlabel="False"] ;
+5 [label="mse = 2098546.722\nsamples = 58.0%\nvalue = 5579.726"] ;
+4 -> 5 ;
+6 [label="mse = 1439988.198\nsamples = 1.5%\nvalue = 2516.727"] ;
+4 -> 6 ;
+}
