@@ -42,3 +42,6 @@ data.*
 # databases
 *.db
 *.gz
+
+# other projects
+**/lime/
