@@ -26,6 +26,7 @@ data.*
 **/aclImdb_v1.tar.gz
 **/iris-model.db
 **iris.data
+*dataset*
 
 # draft files
 */drafts/
