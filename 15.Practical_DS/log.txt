@@ -500,3 +500,4 @@
 {"request": {"basket": [1], "zipCode": 7121, "totalAmount": 10.0}, "response": 0.014143166377490121}
 {"request": {"basket": [2, 3, 2, 0, 2, 1, 0], "zipCode": 1444, "totalAmount": null}, "response": 0.0009159572005032113}
 {"request": {"basket": null, "zipCode": 2784, "totalAmount": null}, "response": 0.07581894427105684}
+{"request": {"basket": [4, 3, 0, 3, 1, 1, 2, 0, 2], "zipCode": 2729, "totalAmount": 12}, "response": 0.0008917647583525982}
